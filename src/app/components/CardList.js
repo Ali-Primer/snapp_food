@@ -1,10 +1,14 @@
+import { MainCategories } from "../db/mainCategory"
 import { CategoryCard } from "./CategoryCard"
 
 export const CardList = () => {
-    return(
+    const mainCategories = MainCategories
+    return (
         <>
             <div className="CardList">
-                <CategoryCard/>
+                {mainCategories.map(mainCategory => (
+                    <CategoryCard category={mainCategory}/>
+                ))}
             </div>
         </>
     )
