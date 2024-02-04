@@ -5,14 +5,15 @@ import { IoIosArrowDown } from "react-icons/io";
 import { IoSearch } from "react-icons/io5";
 import Image from "next/image";
 import logo from '../../../public/Logo/images.png'
-import { categories } from "../db/category";
+import { categories } from "../db/categoryHeader";
 import { HeaderCards } from "./headerCard";
 
 
 
 
+
 export const Header = () => {
-    
+
     const CATEGORIES = categories
 
     return (
@@ -45,13 +46,12 @@ export const Header = () => {
                     </div>
                 </div>
 
-
-
-                <div className="header_category">
-                    {CATEGORIES.map(category => (
-                        <HeaderCards category={category}/>
-                    ))}
-                </div>
+                        <div className="header_category">
+                            {CATEGORIES.map(category => (
+                                <HeaderCards category={category} />
+                            ))}
+                        </div>
+                
 
 
 
