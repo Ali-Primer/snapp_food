@@ -1,6 +1,7 @@
 :root {
   --normal-bigger-font: 2rem;
   --small-font: 1.2rem;
+  --normal-font: 1.6rem;
   --dark-gray-color: rgb(83, 86, 92);
   --gray-color: #9d9ea1;
   --light-gray-color: #d1d2d2;
@@ -128,33 +129,56 @@ body {
 
 .CategoryCard_container {
   display: flex;
-  width: 100px;
   justify-content: space-evenly;
   align-items: center;
+  width: 172.5px;
+  height: 95px;
 }
 
 .main_content{
-  width: 172.5px;
-  height: 95px;
   position: relative;
-}
-.main_content img{
-  position: absolute;
-  border-radius: 8px;
-  background: black;
   width: 100%;
   height: 100%;
-}
-.content_textBox{
-  background: red;
-  width: 70%;
-  z-index: 1;
-  position: absolute;
-  bottom: 0;
-  border-top-left-radius: 8px;
+  box-shadow: 0px 18px 15px -3px rgba(0,0,0,0.1);
+  cursor: pointer;
+  transition: 1s;
 }
 
-.textBox_text{
+.main_content:hover{
+  box-shadow: 0px 0px 0px 0px white;
+  transition: 1s;
+}
+
+.content_textBox:hover .textBox_icon{
+  margin-right: 15px;
+  transition: 0.5s;
+}
+
+.main_content img{
+  border-radius: 8px;
+  width: 100%;
+  height: 95%;
+}
+.content_textBox{
+  background: white;
+  width: 70%;
+  height: 95%;
+  height: 25px;
+  z-index: 1;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  border-top-left-radius: 8px;
+  font-size: var(--normal-font);
+  display: flex;
+  align-items: center;
+  font-size: var(--normal-font);
+  padding-right: 10px;
+}
+
+.textBox_icon{
+  color: var(--theme-pink-color);
   font-size: var(--normal-bigger-font);
-  
+  margin-right: 8px;
+  transition: 0.5s;
 }
