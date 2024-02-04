@@ -1,6 +1,7 @@
 :root {
   --normal-bigger-font: 2rem;
-
+  --small-font: 1.2rem;
+  --dark-gray-color : rgb(83, 86, 92);
   --gray-color: #9d9ea1;
   --light-gray-color: #d1d2d2;
   --theme-pink-color: #ff42bd;
@@ -86,4 +87,32 @@ body {
   align-items: center;
   width: 35%;
   font-size: var(--normal-bigger-font);
+}
+
+.header_category{
+  display: flex;
+  align-items: center;
+  height: 50%;
+  overflow-x: scroll;
+  width: 200%;
+  gap: 5px;
+}
+
+.header_card{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 100%;
+  width: 150px;
+  border: 1px solid black;
+}
+
+.card_image{
+  height: 80%;
+  height: 100%;
+}
+.card_text{
+  font-size: var(--small-font);
+  color: var(--dark-gray-color);
 }
