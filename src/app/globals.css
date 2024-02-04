@@ -1,7 +1,7 @@
 :root {
   --normal-bigger-font: 2rem;
   --small-font: 1.2rem;
-  --dark-gray-color : rgb(83, 86, 92);
+  --dark-gray-color: rgb(83, 86, 92);
   --gray-color: #9d9ea1;
   --light-gray-color: #d1d2d2;
   --theme-pink-color: #ff42bd;
@@ -25,11 +25,11 @@ body {
 
 .header {
   width: 100%;
-  height: 50px;
+  height: 200px;
 }
 
 .header_main {
-  height: 100%;
+  height: 20%;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
@@ -45,7 +45,8 @@ body {
 .main_right {
   width: 50%;
 }
-.right_logo{
+
+.right_logo {
   display: none;
 }
 
@@ -69,7 +70,7 @@ body {
   font-weight: 900;
 }
 
-.main_search input{
+.main_search input {
   border: none;
   background: var(--light-gray-color);
   border-radius: 8px;
@@ -77,12 +78,12 @@ body {
   display: none;
 }
 
-.search_button{
+.search_button {
   color: var(--light-gray-color);
   font-size: var(--normal-bigger-font);
 }
 
-.main_left{
+.main_left {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
@@ -90,7 +91,7 @@ body {
   font-size: var(--normal-bigger-font);
 }
 
-.header_category{
+.header_category {
   display: flex;
   align-items: center;
   height: 100px;
@@ -98,7 +99,7 @@ body {
   width: 100%;
 }
 
-.header_card{
+.header_card {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -108,14 +109,52 @@ body {
   cursor: pointer;
 }
 
-.card_image{
+.card_image {
   height: 50%;
 }
 
-.card_image img{
+.card_image img {
   width: 100%;
 }
-.card_text{
+
+.card_text {
   font-size: var(--small-font);
   color: var(--dark-gray-color);
+}
+
+.category_text {
+  color: var(--dark-gray-color);
+}
+
+.CategoryCard_container {
+  display: flex;
+  width: 100px;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.main_content{
+  width: 172.5px;
+  height: 95px;
+  position: relative;
+}
+.main_content img{
+  position: absolute;
+  border-radius: 8px;
+  background: black;
+  width: 100%;
+  height: 100%;
+}
+.content_textBox{
+  background: red;
+  width: 70%;
+  z-index: 1;
+  position: absolute;
+  bottom: 0;
+  border-top-left-radius: 8px;
+}
+
+.textBox_text{
+  font-size: var(--normal-bigger-font);
+  
 }

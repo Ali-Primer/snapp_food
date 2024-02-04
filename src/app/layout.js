@@ -16,7 +16,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={IranSansMobile.className}>
-        <Header />
+        <Header/>
         {children}
       </body>
     </html>
