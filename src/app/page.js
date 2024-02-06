@@ -2,6 +2,7 @@
 import { CardList } from "./components/CardList";
 import { CategoryCard } from "./components/CategoryCard";
 import { ContactUs } from "./components/ContactUs";
+import { Seller_SignUp } from "./components/seller_signUp";
 import { MainCategories } from "./db/mainCategory";
 import styles from "./page.module.css";
 
@@ -32,6 +33,7 @@ export default function Home() {
           </div>
         </div>
         <ContactUs />
+        <Seller_SignUp/>
       </div>
     </>
   );
