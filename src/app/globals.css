@@ -8,6 +8,7 @@
   --gray-background: #ebedf0;
   --light-gray-color: #d1d2d2;
   --theme-pink-color: #ff00a6;
+  --theme-pink-color-hover: #ff04a7b9;
 }
 
 
@@ -325,6 +326,28 @@ body {
   justify-content: space-around;
   align-items: center;
 }
+
+
+.list_text{
+  font-size: var(--normal-bigger-font);
+  color: var(--dark-gray-color);
+  margin-top: 10px;
+  margin-bottom: 50px;
+  font-weight: 800;
+}
+.list{
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 40px;
+  row-gap: 20px;
+  color: var(--gray-color);
+}
+
+.city{
+  cursor: pointer;
+}
+
 
 .footer_right {
   margin-top: 20px;

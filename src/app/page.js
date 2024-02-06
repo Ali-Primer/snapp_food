@@ -1,8 +1,10 @@
 'use client'
 import { CardList } from "./components/CardList";
 import { CategoryCard } from "./components/CategoryCard";
+import { Cities } from "./components/Cities";
 import { ContactUs } from "./components/ContactUs";
 import { Seller_SignUp } from "./components/seller_signUp";
+import { cities } from "./db/cities";
 import { MainCategories } from "./db/mainCategory";
 import styles from "./page.module.css";
 
@@ -33,7 +35,15 @@ export default function Home() {
           </div>
         </div>
         <ContactUs />
-        <Seller_SignUp/>
+        <Seller_SignUp />
+        <div className="cities_list">
+          <p className="list_text">لیست شهر ها</p>
+          <div className="list">
+            {cities.map(city => (
+              <Cities city={city} />
+            ))}
+          </div>
+        </div>
       </div>
     </>
   );
