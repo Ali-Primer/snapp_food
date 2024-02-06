@@ -1,3 +1,6 @@
+import Image from 'next/image'
+import link from '../../../public/link/iapps.svg'
+
 export const ContactUs = () => {
     return (
         <div className="Contact">
@@ -20,7 +23,12 @@ export const ContactUs = () => {
 
                     </div>
                 </div>
-                <div className="infos_links"></div>
+                <div className="infos_links">
+                    <Image src={link} quality={100}/>
+                    <Image src={link} quality={100}/>
+                    <Image src={link} quality={100}/>
+                    <Image src={link} quality={100}/>
+                </div>
             </div>
         </div>
     )

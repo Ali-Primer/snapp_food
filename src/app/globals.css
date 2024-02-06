@@ -263,9 +263,18 @@ body {
   background: var(--theme-pink-color);
   color: white;
   font-size: var(--normal-font);
+  margin-top: -5px;
+  height: 35px;
   font-weight: 800;
   border-radius: 4px;
   padding: 1px 10px;
+}
+
+.infos_links{
+  width: 305px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  row-gap: 5px;
 }
 
 .footer_right{
