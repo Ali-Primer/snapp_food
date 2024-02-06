@@ -286,24 +286,24 @@ body {
   padding: 46px;
 }
 
-.Seller_SignUp_box{
+.Seller_SignUp_box {
   display: flex;
   justify-content: space-evenly;
   flex-direction: column;
   height: 100%;
 }
 
-.box_title{
+.box_title {
   font-size: var(--big-font);
   font-weight: 900;
 }
 
-.box_text{
+.box_text {
   font-size: var(--normal-bigger-font);
   color: var(--gray-color);
 }
 
-.button{
+.button {
   margin-top: 20px;
   display: flex;
   align-items: center;
@@ -316,9 +316,10 @@ body {
   color: white;
   font-weight: 800;
   border-radius: 5px;
+  transition: 0.5s;
 }
 
-.button_icon{
+.button_icon {
   font-size: 2.5rem;
   font-weight: 900;
   width: 30px;
@@ -328,14 +329,15 @@ body {
 }
 
 
-.list_text{
+.list_text {
   font-size: var(--normal-bigger-font);
   color: var(--dark-gray-color);
   margin-top: 10px;
   margin-bottom: 50px;
   font-weight: 800;
 }
-.list{
+
+.list {
   margin-top: 20px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -344,10 +346,20 @@ body {
   color: var(--gray-color);
 }
 
-.city{
+.city {
   cursor: pointer;
 }
 
+.button:hover,
+.button_link:hover {
+  background: var(--theme-pink-color-hover);
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.button_link {
+  transition: 0.5s;
+}
 
 .footer_right {
   margin-top: 20px;
