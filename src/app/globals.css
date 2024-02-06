@@ -2,10 +2,12 @@
   --normal-bigger-font: 2rem;
   --small-font: 1.2rem;
   --normal-font: 1.6rem;
+  --big-font: 3.2rem;
   --dark-gray-color: rgb(83, 86, 92);
   --gray-color: #9d9ea1;
+  --gray-background: #ebedf0;
   --light-gray-color: #d1d2d2;
-  --theme-pink-color: #ff42bd;
+  --theme-pink-color: #ff00a6;
 }
 
 
@@ -200,6 +202,71 @@ body {
   transition: 0.5s;
 }
 
+.Contact{
+  width: 100%;
+  margin-top: 40px;
+  height: 500px;
+  padding: 30px;
+  background: var(--gray-background);
+  border-radius: 20px;
+}
+
+.Contact_infos{
+  height: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+
+}
+
+.infos_title{
+  font-size: var(--big-font);
+  font-weight: 900;
+}
+
+.infos_text{
+  font-size: 14px;
+  color: var(--gray-color);
+  line-height: 35px;
+}
+
+.form_text{
+  font-family: 900;
+  font-size: var(--small-font);
+}
+
+.form_box{
+  margin-top: 10px;
+  position: relative;
+  background: white;
+  box-shadow: 0px 10px 15px 9px rgba(0,0,0,0.1);
+  border-radius: 8px;
+  width: 285px;
+  height: 48px;
+  display: flex;
+  padding: 12px;
+  justify-content: space-between;
+}
+
+.box_input{
+  border: 0;
+  outline: none;
+  direction: ltr;
+  width: 125px;
+}
+
+.box_button button{
+  cursor: pointer;
+  border: 0;
+  outline: none;
+  padding: 1px 6px;
+  background: var(--theme-pink-color);
+  color: white;
+  font-size: var(--normal-font);
+  font-weight: 800;
+  border-radius: 4px;
+  padding: 1px 10px;
+}
 
 .footer_right{
   margin-top: 20px;
