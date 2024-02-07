@@ -3,7 +3,9 @@
   --small-font: 1.2rem;
   --normal-font: 1.6rem;
   --big-font: 3.2rem;
+  --smaller-big-font: 2.6rem;
   --dark-gray-color: rgb(83, 86, 92);
+  --restaurants-color: #3a3d60;
   --gray-color: #9d9ea1;
   --gray-background: #ebedf0;
   --light-gray-color: #d1d2d2;
@@ -141,6 +143,7 @@ body {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   row-gap: 10px;
+  margin-bottom: 85px;
 }
 
 .main {
@@ -202,6 +205,94 @@ body {
   font-size: var(--normal-bigger-font);
   margin-right: 8px;
   transition: 0.5s;
+}
+
+.restaurants_type {
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+  border-bottom: var(--light-gray-color) 1px solid;
+
+}
+
+.type {
+  font-size: var(--smaller-big-font);
+  font-weight: 700;
+  color: var(--restaurants-color);
+  align-self: right;
+  margin-bottom: 60px;
+}
+
+.RestaurantCard {
+  width: 377px;
+  height: 260px;
+  border-radius: 8px;
+  margin-bottom: 40px;
+}
+
+.type_list {
+  align-self: center;
+}
+
+.RestaurantCard_image {
+  position: relative;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.image_main {
+  width: 377px;
+  height: 155px;
+  object-fit: cover;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+.image_logo {
+  border-radius: 16px;
+  background: white;
+  position: absolute;
+  z-index: 2;
+  width: 82px;
+  height: 82px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  bottom: -20px;
+}
+
+.logo {
+  width: 90%;
+  height: 90%;
+  border-radius: 16px;
+}
+
+.RestaurantCard_info {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 20px;
+  color: var(--restaurants-color);
+  height: 100px;
+}
+
+.info_restaurantName {
+  font-size: var(--normal-bigger-font);
+  font-weight: 700;
+}
+
+.info_restaurantRating {
+  font-size: var(--small-font);
+  font-weight: 700;
+}
+
+.restaurantRating_icon{
+  color: gold;
+  font-size: 11px;
+  margin-left: 5px;
 }
 
 .Contact {
