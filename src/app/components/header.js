@@ -32,7 +32,7 @@ export const Header = () => {
                             </div>
                         </div>
                         <div className="main_search">
-                            <input />
+                            <input placeholder="جست و جو در اسنپ فود" />
                             <IoSearch className="search_button" />
                         </div>
                         <div className="main_left">
@@ -46,15 +46,11 @@ export const Header = () => {
                     </div>
                 </div>
 
-                        <div className="header_category">
-                            {CATEGORIES.map(category => (
-                                <HeaderCards category={category} />
-                            ))}
-                        </div>
-                
-
-
-
+                <div className="header_category">
+                    {CATEGORIES.map(category => (
+                        <HeaderCards category={category} />
+                    ))}
+                </div>
             </div>
         </>
     )

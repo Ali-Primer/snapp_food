@@ -261,6 +261,7 @@ body {
   justify-content: space-evenly;
   align-items: center;
   bottom: -20px;
+  box-shadow: 0px 24px 26px 0px rgba(0,0,0,0.1);
 }
 
 .logo {
@@ -289,7 +290,7 @@ body {
   font-weight: 700;
 }
 
-.restaurantRating_icon{
+.restaurantRating_icon {
   color: gold;
   font-size: 11px;
   margin-left: 5px;
@@ -314,17 +315,19 @@ body {
 
 .infos_title {
   font-size: var(--big-font);
+  color: var(--restaurants-color);
   font-weight: 900;
 }
 
 .infos_text {
   font-size: 14px;
-  color: var(--gray-color);
+  color: var(--dark-gray-color);
   line-height: 35px;
 }
 
 .form_text {
-  font-family: 900;
+  font-family: 700;
+  color: var(--dark-gray-color);
   font-size: var(--small-font);
 }
 
@@ -345,6 +348,7 @@ body {
   border: 0;
   outline: none;
   direction: ltr;
+  padding-left: 52px;
   width: 125px;
 }
 
@@ -386,12 +390,14 @@ body {
 
 .box_title {
   font-size: var(--big-font);
-  font-weight: 900;
+  color: var(--restaurants-color);
+  font-weight: 700;
 }
 
 .box_text {
   font-size: var(--normal-bigger-font);
-  color: var(--gray-color);
+  color: var(--restaurants-color);
+  font-weight: 400;
 }
 
 .button {
@@ -529,4 +535,92 @@ li {
 
 .images_left {
   margin-right: 325px;
+}
+
+
+
+
+@media only screen and (min-width: 765px) {
+
+  .main{
+    margin-top: 155px;
+  }
+
+  .header{
+    height: 140px;
+  }
+
+  .main_right {
+    display: flex;
+  }
+
+  .right_logo {
+    display: block;
+  }
+
+  .main_right {
+    width: 33%;
+  }
+
+  .main_left{
+    width: 15%;
+  }
+
+  .main_search {
+    display: flex;
+    position: relative;
+    width: 55%;
+  }
+
+  .main_search input {
+    display: block;
+    padding-right: 25px;
+    width: 100%;
+  }
+
+  .search_button {
+    position: absolute;
+    z-index: 5;
+    color: var(--gray-color);
+    right: 2px;
+    top: 2px;
+  }
+
+  .header_category{
+    width: 100%;
+    justify-content: space-evenly;
+  }
+
+  .header_category img{
+    height: 40px;
+  }
+
+  .CardList{
+    grid-template-columns: repeat(3, 1fr);
+    row-gap: 53px;
+  }
+
+  .CategoryCard_container{
+    width: 210px;
+    height: 95px;
+  }
+
+  .type_list{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 20px;
+  }
+
+  .RestaurantCard{
+    width: 350px;
+  }
+
+  .infos_links{
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 35px;
+  }
+
+  .list{
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
