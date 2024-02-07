@@ -458,6 +458,15 @@ body {
   transition: 0.5s;
 }
 
+.footer{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.footer_middleRight, .footer_middleLeft{
+  padding: 40px;
+}
+
 .footer_right {
   margin-top: 20px;
   padding: 40px;
@@ -623,4 +632,15 @@ li {
   .list{
     grid-template-columns: repeat(4, 1fr);
   }
+
+  
+
+  .footer_right{
+    width: 60%;
+  }
+
+  .images_left{
+    margin-top: 50px;
+  }
+
 }

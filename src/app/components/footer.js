@@ -36,31 +36,29 @@ export const Footer = () => {
                     </div>
                 </div>
             </div>
-            <div className="footer_middle">
 
-                <div className="footer_middleRight">
-                    <ul>
-                        <li>درباره اسنپ فود</li>
-                        <li>فرصت ها شغلی</li>
-                        <li>وبلاگ</li>
-                        <li>قوانین سایت</li>
-                        <li>حریم خصوصی</li>
-                        <li>ثبت نام فروشندگان</li>
-                    </ul>
-                </div>
-                <div className="footer_middleLeft">
-                    <ul>
-                        <li>تماس با اسنپ فود</li>
-                        <li>پرسش های متداول</li>
-                        <li>ثبت شکایات</li>
-                        <li>اپلیکیشن موبایل</li>
-                    </ul>
-                </div>
+            <div className="footer_middleRight">
+                <ul>
+                    <li>درباره اسنپ فود</li>
+                    <li>فرصت ها شغلی</li>
+                    <li>وبلاگ</li>
+                    <li>قوانین سایت</li>
+                    <li>حریم خصوصی</li>
+                    <li>ثبت نام فروشندگان</li>
+                </ul>
+            </div>
+            <div className="footer_middleLeft">
+                <ul>
+                    <li>تماس با اسنپ فود</li>
+                    <li>پرسش های متداول</li>
+                    <li>ثبت شکایات</li>
+                    <li>اپلیکیشن موبایل</li>
+                </ul>
             </div>
             <div className="footer_left">
                 <div className='left_images'>
                     <div className='images_left'>
-                        <img src='https://snappfood.ir/static/images/senf.png' quality={100}/>
+                        <img src='https://snappfood.ir/static/images/senf.png' quality={100} />
                     </div>
                 </div>
             </div>
