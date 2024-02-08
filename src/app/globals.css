@@ -10,7 +10,7 @@
   --gray-background: #ebedf0;
   --light-gray-color: #d1d2d2;
   --theme-pink-color: #ff00a6;
-  --theme-pink-color-hover: #ff04a7b9;
+  --theme-pink-color-hover: #ff5bc5;
 }
 
 
@@ -107,7 +107,6 @@ body {
   display: flex;
   align-items: center;
   height: 100px;
-  overflow-x: scroll;
   width: 100%;
 }
 
@@ -232,6 +231,14 @@ body {
   height: 260px;
   border-radius: 8px;
   margin-bottom: 40px;
+  box-shadow: 0px 10px 22px 0px rgba(0,0,0,0.1);
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.RestaurantCard:hover{
+  box-shadow: 0px 10px 14px 17px rgba(0,0,0,0.1);
+  transition: 0.5s;
 }
 
 .type_list {
@@ -407,6 +414,10 @@ body {
   font-weight: 400;
 }
 
+.box_image{
+  display: none;
+}
+
 .button {
   margin-top: 20px;
   display: flex;
@@ -468,6 +479,7 @@ body {
 .footer {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-around;
 }
 
 .footer_middleRight,
@@ -554,8 +566,27 @@ li {
   margin-right: 325px;
 }
 
+.respond{
+  border-radius: 50px;
+  background: var(--theme-pink-color);
+  position: fixed;
+  z-index: 100;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: var(--normal-bigger-font);
+  color: white;
+  cursor: pointer;
+  bottom: 40px;
+  right: 20px;
+  font-weight: 800;
+}
 
-
+.respond:hover{
+  background: var(--theme-pink-color-hover);
+}
 
 @media only screen and (min-width: 765px) {
 
@@ -711,6 +742,7 @@ li {
 
   .box_image{
     width: 266px;
+    display: block;
   }
 
   .box_image img{
@@ -729,5 +761,27 @@ li {
   .images_left {
     margin-right: 0;
     padding: 20px;
+  }
+}
+
+@media only screen and (min-width: 1024px){
+  .Seller_SignUp{
+    justify-content: space-between;
+  }
+  
+  .box_image{
+    margin-right: 40px;
+  }
+
+  .CardList {
+    grid-template-columns: repeat(6, 1fr);
+  }
+
+  .type_list{
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .list{
+    grid-template-columns: repeat(12, 1fr);
   }
 }
