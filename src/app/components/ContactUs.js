@@ -30,6 +30,9 @@ export const ContactUs = () => {
                     <Image src={link} quality={100}/>
                 </div>
             </div>
+            <div className='Contact_image'>
+                <img src='https://snappfood.ir/static/images/img_app_mockup@2x.png' />
+            </div>
         </div>
     )
 }

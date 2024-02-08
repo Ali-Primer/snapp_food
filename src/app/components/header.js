@@ -41,6 +41,7 @@ export const Header = () => {
                             </div>
                             <div className="left_buys">
                                 <MdNotes />
+                                <p className="buys_text">سفارش ها</p>
                             </div>
                         </div>
                     </div>

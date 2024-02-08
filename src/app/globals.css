@@ -121,6 +121,10 @@ body {
   cursor: pointer;
 }
 
+.buys_text {
+  display: none;
+}
+
 .card_image {
   height: 50%;
 }
@@ -261,7 +265,7 @@ body {
   justify-content: space-evenly;
   align-items: center;
   bottom: -20px;
-  box-shadow: 0px 24px 26px 0px rgba(0,0,0,0.1);
+  box-shadow: 0px 24px 26px 0px rgba(0, 0, 0, 0.1);
 }
 
 .logo {
@@ -305,12 +309,15 @@ body {
   border-radius: 20px;
 }
 
+.Contact_image{
+  display: none;
+}
+
 .Contact_infos {
   height: 100%;
   display: flex;
   justify-content: space-evenly;
   flex-direction: column;
-
 }
 
 .infos_title {
@@ -458,12 +465,13 @@ body {
   transition: 0.5s;
 }
 
-.footer{
+.footer {
   display: flex;
   flex-wrap: wrap;
 }
 
-.footer_middleRight, .footer_middleLeft{
+.footer_middleRight,
+.footer_middleLeft {
   padding: 40px;
 }
 
@@ -551,11 +559,11 @@ li {
 
 @media only screen and (min-width: 765px) {
 
-  .main{
+  .main {
     margin-top: 155px;
   }
 
-  .header{
+  .header {
     height: 140px;
   }
 
@@ -571,7 +579,7 @@ li {
     width: 33%;
   }
 
-  .main_left{
+  .main_left {
     width: 15%;
   }
 
@@ -595,52 +603,109 @@ li {
     top: 2px;
   }
 
-  .header_category{
+  .header_category {
     width: 100%;
     justify-content: space-evenly;
   }
 
-  .header_category img{
+  .header_category img {
     height: 40px;
   }
 
-  .CardList{
+  .CardList {
     grid-template-columns: repeat(3, 1fr);
     row-gap: 53px;
   }
 
-  .CategoryCard_container{
+  .CategoryCard_container {
     width: 210px;
     height: 95px;
   }
 
-  .type_list{
+  .type_list {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     column-gap: 20px;
   }
 
-  .RestaurantCard{
+  .RestaurantCard {
     width: 350px;
   }
 
-  .infos_links{
+  .infos_links {
     grid-template-columns: repeat(4, 1fr);
     column-gap: 35px;
   }
 
-  .list{
+  .list {
     grid-template-columns: repeat(4, 1fr);
   }
 
-  
 
-  .footer_right{
+
+  .footer_right {
     width: 60%;
   }
 
-  .images_left{
+  .images_left {
     margin-top: 50px;
   }
+}
 
+@media only screen and (min-width: 1024px) {
+
+  .left_buys {
+    display: flex;
+    margin-top: 5px;
+  }
+
+  .buys_text {
+    display: block;
+    font-size: 14px;
+    font-weight: 700;
+  }
+
+  .CardList {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .type_list{
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .RestaurantCard{
+    width: 317px;
+  }
+
+  .Contact{
+    display: flex;
+    justify-content: space-between;
+    padding: 40px;
+  }
+
+  .Contact_infos{
+    width: 500px;
+  }
+
+  .Contact_image{
+    display: block;
+    width: 424px;
+    height: 620px;
+  }
+  
+  .Contact_image img{
+    width: 424px;
+    height: 100%;
+    object-fit: cover;
+    margin-top: -150px;
+  }
+
+  .infos_links{
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 0;
+  }
+
+  .Seller_SignUp_box{
+    width: 424px;
+  }
 }
