@@ -21,6 +21,9 @@ export const Seller_SignUp = () => {
                     </div>
                 </div>
             </div>
+            <div className="box_image">
+                <img src="https://snappfood.ir/static/images/vendor_pic.png" />
+            </div>
         </div>
     )
 }

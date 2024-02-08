@@ -705,7 +705,29 @@ li {
     column-gap: 0;
   }
 
-  .Seller_SignUp_box{
-    width: 424px;
+  .Seller_SignUp{
+    display: flex;
+  }
+
+  .box_image{
+    width: 266px;
+  }
+
+  .box_image img{
+    width: 100%;
+    height: 100%;
+  }
+
+  .list{
+    grid-template-columns: repeat(6, 1fr);
+  }
+
+  .footer_right {
+    width: 40%;
+  }
+
+  .images_left {
+    margin-right: 0;
+    padding: 20px;
   }
 }
