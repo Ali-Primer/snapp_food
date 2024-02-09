@@ -1,5 +1,8 @@
+import '../restaurants.css';
+import { FaStar } from "react-icons/fa6";
+
+
 export const RestaurantInfoCard = ({restaurant}) => {
-    console.log(restaurant);
     return (
         <>
             <div className="RestaurantInfoCard">
@@ -9,8 +12,11 @@ export const RestaurantInfoCard = ({restaurant}) => {
                             <img src={restaurant.logo} alt="logo"/>
                         </div>
                         <div className="header_info">
-                            <p>{restaurant.name}</p>
-                            <p>{restaurant.rating}</p>
+                            <div className='info_rating'>
+                                <FaStar className="restaurantRating_icon" />
+                                <p>{restaurant.rating}</p>
+                            </div>
+                            <p className='info_name'>{restaurant.name}</p>
                         </div>
                     </div>
                 </aside>
