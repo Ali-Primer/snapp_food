@@ -1,8 +1,10 @@
 import '../restaurants.css';
 import { FaStar } from "react-icons/fa6";
+import { Food } from './Food';
 
 
 export const RestaurantInfoCard = ({restaurant}) => {
+    const foods = restaurant.foods;
     return (
         <>
             <div className="RestaurantInfoCard">
@@ -20,7 +22,14 @@ export const RestaurantInfoCard = ({restaurant}) => {
                         </div>
                     </div>
                 </aside>
-                <section className="main_foodsList"></section>
+                <section className="main_foodsList">
+                    <div className='foodList_menu'>
+                        <p>لیست غذا ها</p>
+                    </div>
+                    {foods.map(food => (
+                        <Food food={food}/>
+                    ))}
+                </section>
                 <aside className="main_Cart"></aside>
             </div>
         </>
