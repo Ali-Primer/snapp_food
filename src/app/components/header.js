@@ -7,6 +7,7 @@ import Image from "next/image";
 import logo from '../../../public/Logo/images.png'
 import { categories } from "../db/categoryHeader";
 import { HeaderCards } from "./headerCard";
+import Link from "next/link";
 
 
 
@@ -22,9 +23,11 @@ export const Header = () => {
                 <div className="header_main">
                     <div className="main_container">
                         <div className="main_right">
-                            <div className="right_logo">
-                                <Image src={logo} width={50} quality={100} />
-                            </div>
+                            <Link href={'./'}>
+                                <div className="right_logo">
+                                    <Image src={logo} width={50} quality={100} />
+                                </div>
+                            </Link>
                             <div className="right_address">
                                 <FaLocationDot />
                                 <p className="address_text">بجنورد، خیابان لباف...</p>
