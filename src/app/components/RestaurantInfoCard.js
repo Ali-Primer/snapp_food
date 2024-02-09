@@ -1,4 +1,5 @@
 export const RestaurantInfoCard = ({restaurant}) => {
+    console.log(restaurant);
     return (
         <>
             <div className="RestaurantInfoCard">

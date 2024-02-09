@@ -1,12 +1,10 @@
 import { RestaurantInfoCard } from "../components/RestaurantInfoCard"
-import { Restaurant } from "../db/Restaurant";
+import { Restaurant } from "../db/Restaurant"
 
 const page = ({ params }) => {
     const restaurant = params.restaurant
     const decodeString = decodeURIComponent(restaurant)
-    const selectedRestaurant = Restaurant.filter(res => res.name === decodeString)
-    console.log(decodeString);
-    console.log(selectedRestaurant);
+    const selectedRestaurant = Restaurant.filter(res => res.name === decodeString)[0]
     return (
         <>
             <div className="main">
