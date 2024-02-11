@@ -28,10 +28,10 @@ export const Food = ({ food }) => {
                 <div className="food_footer">
                     <div className="footer_box">
                         <div className="box_price">
-                        {convertToPersianFormat(food.price)} تومان
+                        {convertToPersianFormat(food.price)} <span className="tooman">تومان</span>
                         </div>
-                        <div className="box_button">
-                            <button className="button_add">افزودن</button>
+                        <div className="box_button2">
+                            <button className="button2_add">افزودن</button>
                         </div>
                     </div>
                 </div>

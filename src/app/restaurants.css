@@ -2,6 +2,7 @@
     --normal-bigger-font: 2rem;
     --normal-smaller-big-font:1.8rem;
     --small-font: 1.2rem;
+    --small-font-plus: 1.4rem;
     --normal-font: 1.6rem;
     --big-font: 3.2rem;
     --smaller-big-font: 2.6rem;
@@ -143,6 +144,44 @@ body {
     color: var(--info-color);
 }
 
+.footer_box{
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 45px;
+}
+
 .food_footer{
-    margin-top: 20px;
+    margin-top: 0px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+}
+
+.box_price{
+    font-size: var(--small-font-plus);
+    font-weight: 700;
+}
+
+.tooman{
+    font-size: var(--small-font);
+    margin-right: 0px;
+    font-weight: 400;
+}
+
+.button2_add{
+    font-size: var(--small-font-plus);
+    color: var(--theme-pink-color);
+    font-weight: 700;
+    background: white;
+    box-shadow: 0px 10px 15px 4px rgba(0,0,0,0.1);
+    border: 0;
+    outline: none;
+    border-radius: 45px;
+    width: 107px;
+    height: 37px;
+    padding: 1px 6px;
+    cursor: pointer;
 }
