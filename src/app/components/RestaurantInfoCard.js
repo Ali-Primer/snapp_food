@@ -3,7 +3,7 @@ import { FaStar } from "react-icons/fa6";
 import { Food } from './Food';
 
 
-export const RestaurantInfoCard = ({restaurant}) => {
+export const RestaurantInfoCard = ({ restaurant }) => {
     const foods = restaurant.foods;
     return (
         <>
@@ -11,7 +11,7 @@ export const RestaurantInfoCard = ({restaurant}) => {
                 <aside className="main_restaurantInfo">
                     <div className="restaurantInfo_header">
                         <div className="header_img">
-                            <img src={restaurant.logo} alt="logo"/>
+                            <img src={restaurant.logo} alt="logo" />
                         </div>
                         <div className="header_info">
                             <div className='info_rating'>
@@ -22,15 +22,21 @@ export const RestaurantInfoCard = ({restaurant}) => {
                         </div>
                     </div>
                 </aside>
-                <section className="main_foodsList">
+                <div className="main_foodsList">
                     <div className='foodList_menu'>
-                        <p>لیست غذا ها</p>
+                        <p className='menu'>لیست غذا ها</p>
                     </div>
-                    {foods.map(food => (
-                        <Food food={food}/>
-                    ))}
-                </section>
-                <aside className="main_Cart"></aside>
+                    <div className='food_list'>
+                        {foods.map(food => (
+                            <Food key={food.id} food={food} />
+                        ))}
+                    </div>
+                </div>
+                <aside className="main_delivery-cart">
+                            <div className='delivery-cart'>
+
+                            </div>
+                </aside>
             </div>
         </>
     )

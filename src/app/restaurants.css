@@ -6,6 +6,8 @@
     --big-font: 3.2rem;
     --smaller-big-font: 2.6rem;
     --theme-pink-color: #ff00a6;
+    --info-color: #A6AAAD;
+    --borders-color: #ebedf0;
 }
 
 * {
@@ -67,4 +69,80 @@ body {
 .info_name{
     font-size: var(--normal-smaller-big-font);
     font-weight: 700;
+}
+
+.foodList_menu{
+    font-weight: 700;
+    font-size: var(--small-font);
+    border: var(--borders-color) solid 1px;
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.food_list{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.food{
+    width: 50%;
+    height: 225px;
+    border: var(--borders-color) solid 1px;
+    padding: 16px;
+}
+
+.main_foodsList{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 50%;
+}
+
+.foodList_menu{
+    text-align: center;
+}
+
+.food_header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5px;
+    height: 150px;
+}
+
+.food_header_img{
+    width: 112px;
+    height: 112px;
+    display: flex;
+    justify-content: center;
+}
+
+.food_header_img img{
+    width: 100%;
+    height: 100%;
+}
+
+.food_header_info{
+    width: 50%;
+}
+
+.food_header_title{
+    font-size: var(--normal-font);
+    font-weight: 700;
+}
+
+.food_header_text{
+    margin-top: 15px;
+    font-size: var(--small-font);
+    font-weight: 400;
+    color: var(--info-color);
+}
+
+.food_footer{
+    margin-top: 20px;
 }
