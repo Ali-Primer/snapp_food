@@ -9,11 +9,11 @@ export const cartSlice = createSlice({
                 name: "پیتزا",
                 price: 200,
                 info: "پنیر پیتزا، سس مخصوص، ژامبون، فلفل دلمه ای، گوجه فرنگی، خمیر پیتزا",
-                image: "https://cdn.snappfood.ir/641x641/cdn/23/69/44/vendor/625952b52d8e8.jpeg"
+                image: "https://cdn.snappfood.ir/641x641/cdn/23/69/44/vendor/625952b52d8e8.jpeg",
+                count: 1
             }
         ]
-    },
-    reducers:{
-        
     }
 })
+
+export default cartSlice.reducer

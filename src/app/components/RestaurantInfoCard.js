@@ -1,10 +1,19 @@
 import '../restaurants.css';
 import { FaStar } from "react-icons/fa6";
 import { Food } from './Food';
+import { useSelector } from 'react-redux';
+import { useMemo } from 'react';
+import { Cart } from './cart';
 
 
 export const RestaurantInfoCard = ({ restaurant }) => {
     const foods = restaurant.foods;
+
+    const { cart } = useSelector((store) => store.cart)
+    const cartCount = useMemo(() =>cart.reduce((init,cur) => init = init + cur.count, 0), [cart])
+    // const price = useMemo(() => cart.reduce((init, cur) => init = init + (cur.count * cur.price), 0), [cart])
+    console.log("cart: ", cart)
+    console.log("cartCount: ", cartCount);
     return (
         <>
             <div className="RestaurantInfoCard">
@@ -33,9 +42,14 @@ export const RestaurantInfoCard = ({ restaurant }) => {
                     </div>
                 </div>
                 <aside className="main_delivery-cart">
-                            <div className='delivery-cart'>
-
-                            </div>
+                    <div className='delivery-cart_count'>
+                        {cartCount}
+                    </div>
+                    <div className='delivery-cart'>
+                        {cart.map(c => (
+                            <Cart key={c.id} cart={c}/>
+                        ))}
+                    </div>
                 </aside>
             </div>
         </>
