@@ -1,10 +1,6 @@
+import { convertToPersianFormat } from "../utlis/persianNumber"
+
 export const Food = ({ food }) => {
-    const convertToPersianFormat = (number) => {
-        const persianNumerals = ['۰', '۱', '۲', '۳', '۴', '۵', '۶', '۷', '۸', '۹'];
-        const numberString = String(number);
-        const formattedNumber = numberString.replace(/\d/g, digit => persianNumerals[Number(digit)]);
-        return formattedNumber;
-    }
     return (
         <>
             <div className="food">
@@ -28,7 +24,7 @@ export const Food = ({ food }) => {
                 <div className="food_footer">
                     <div className="footer_box">
                         <div className="box_price">
-                        {convertToPersianFormat(food.price)} <span className="tooman">تومان</span>
+                            {convertToPersianFormat(food.price)} <span className="tooman">تومان</span>
                         </div>
                         <div className="box_button2">
                             <button className="button2_add">افزودن</button>

@@ -1,5 +1,7 @@
-export const Cart = ({cart}) => {
-    return(
+import { convertToPersianFormat } from "../utlis/persianNumber"
+
+export const Cart = ({ cart }) => {
+    return (
         <>
             <div className="cart">
                 <div className="cart_food">
@@ -7,7 +9,7 @@ export const Cart = ({cart}) => {
                         {cart.name}
                     </div>
                     <div className="food_price">
-                        {cart.price}
+                        {convertToPersianFormat(cart.price)}
                     </div>
                 </div>
             </div>
