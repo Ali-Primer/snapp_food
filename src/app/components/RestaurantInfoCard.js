@@ -13,6 +13,16 @@ export const RestaurantInfoCard = ({ restaurant }) => {
 
     const { cart } = useSelector((store) => store.cart)
     const cartCount = useMemo(() => cart.reduce((init, cur) => init = init + cur.count, 0), [cart])
+    const totalPrice = useMemo(() => cart.reduce((init, cur) => init = init + (cur.count * cur.price), 0), [cart])
+    const realPrice = useMemo(() => totalPrice + 5000 + restaurant.deliveryCost, [cart])
+
+    const deliveryCost = (price) => {
+        if (price === 0) {
+            return "رایگان";
+        } else {
+            return price
+        }
+    }
     // const price = useMemo(() => cart.reduce((init, cur) => init = init + (cur.count * cur.price), 0), [cart])
     console.log("cart: ", cart)
     console.log("cartCount: ", cartCount);
@@ -47,13 +57,50 @@ export const RestaurantInfoCard = ({ restaurant }) => {
                     <div className='delivery-cart_count'>
                         <p>سبد خرید(<span>{convertToPersianFormat(cartCount)}</span>)</p>
                         <button className='count_icon'>
-                            <LuTrash2/>
+                            <LuTrash2 />
                         </button>
                     </div>
                     <div className='delivery-cart'>
                         {cart.map(c => (
                             <Cart key={c.id} cart={c} />
                         ))}
+                    </div>
+
+                    <div className='delivery-cart_moreInfo'>
+                        <div className='moreInfo'>
+                            <p className='moreInfo_text'>
+                                مجموع
+                            </p>
+                            <p className='moreInfo_number'>
+                                {convertToPersianFormat(totalPrice)} <span>تومان</span>
+                            </p>
+                        </div>
+                        <div className='moreInfo'>
+                            <p className='moreInfo_text'>
+                                هزینه بسته بندی
+                            </p>
+                            <p className='moreInfo_number'>
+                                {convertToPersianFormat(5000)} <span>تومان</span>
+                            </p>
+                        </div>
+                        <div className='moreInfo'>
+                            <p className='moreInfo_text'>
+                                هزینه ارسال
+                            </p>
+                            <p className='moreInfo_number'>
+                                {convertToPersianFormat(deliveryCost(restaurant.deliveryCost))} <span>تومان</span>
+                            </p>
+                        </div>
+                        <div className='hr'></div>
+
+                        <div className='moreInfo_realCost'>
+                            <p className='realCost_text'>
+                                قیمت قابل پرداخت
+                            </p>
+                            <p className='realCost_number'>
+                                {convertToPersianFormat(realPrice)} <span>تومان</span>
+                            </p>
+                        </div>
                     </div>
                 </aside>
             </div>

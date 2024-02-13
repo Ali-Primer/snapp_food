@@ -20,7 +20,8 @@ export const Restaurant = [
         rating: 4,
         type: "fastFood",
         logo: "https://cdn.snappfood.ir/media/cache/vendor_logo/uploads/images/vendors/logos/648fe93e3ac79.jpg",
-        image: "https://cdn.snappfood.ir/300x200/uploads/images/vendor-cover-app-review/4/04.jpg"
+        image: "https://cdn.snappfood.ir/300x200/uploads/images/vendor-cover-app-review/4/04.jpg",
+        deliveryCost: 15000
     },
     {
         name: "رستوران دیگچه",
@@ -43,7 +44,8 @@ export const Restaurant = [
         type: "persian",
         rating: 4.7,
         logo: "https://cdn.snappfood.ir/media/cache/vendor_logo/uploads/images/vendors/logos/6394aa67acd72.jpg",
-        image: "https://cdn.snappfood.ir/300x200/uploads/images/vendor-cover-app-review/2/09.jpg"
+        image: "https://cdn.snappfood.ir/300x200/uploads/images/vendor-cover-app-review/2/09.jpg",
+        deliveryCost: 10000
     },
     {
         name: "اسپاخو",
@@ -59,7 +61,8 @@ export const Restaurant = [
         type: "fastFood",
         rating: 4.2,
         logo: "https://cdn.snappfood.ir/media/cache/vendor_logo/uploads/images/vendors/logos/648fe93e3ac79.jpg",
-        image: "https://cdn.snappfood.ir/300x200/cdn/vendor_sub_types/4/10.jpg"
+        image: "https://cdn.snappfood.ir/300x200/cdn/vendor_sub_types/4/10.jpg",
+        deliveryCost: 20000
     },
     {
         name: "رستوران چلو مرغ و گوشت مفخم",
@@ -75,7 +78,8 @@ export const Restaurant = [
         type: "persian",
         rating: 3.8,
         logo: "https://cdn.snappfood.ir/media/cache/vendor_logo/uploads/images/vendors/logos/6394aa67acd72.jpg",
-        image: "https://cdn.snappfood.ir/300x200/uploads/images/vendor-cover-app-review/2/52.jpg"
+        image: "https://cdn.snappfood.ir/300x200/uploads/images/vendor-cover-app-review/2/52.jpg",
+        deliveryCost: 0
     },
     {
         name: "پیتزا کنج",
@@ -91,6 +95,7 @@ export const Restaurant = [
         type: "fastFood",
         rating: 3.5,
         logo: "https://cdn.snappfood.ir/media/cache/vendor_logo/uploads/images/vendors/logos/648fe93e3ac79.jpg",
-        image: "https://cdn.snappfood.ir/300x200/uploads/images/vendor-cover-app-review/4/12.jpg"
+        image: "https://cdn.snappfood.ir/300x200/uploads/images/vendor-cover-app-review/4/12.jpg",
+        deliveryCost: 0
     }
 ]

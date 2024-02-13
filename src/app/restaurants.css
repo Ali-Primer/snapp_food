@@ -11,6 +11,7 @@
     --borders-color: #ebedf0;
     --text-gray: #53565c;
     --text-red-alert: #FA284B;
+    --text-black: #3A3D42;
 }
 
 * {
@@ -217,4 +218,81 @@ body {
     border: 0;
     outline: none;
     cursor: pointer;
+}
+
+.cart_food{
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    height: 80px;
+}
+
+.food_name{
+    font-size: var(--small-font-plus);
+    color: var(--text-black);
+    font-weight: 700;
+}
+
+.food_price{
+    font-size: var(--small-font-plus);
+    color: var(--text-black);
+    font-weight: 700;
+}
+
+.food_price span{
+    font-size: var(--small-font);
+    color: var(--text-gray);
+    font-weight: 400;
+}
+
+.cart_moreInfo{
+    display: flex;
+    flex-direction: column;
+}
+
+.moreInfo{
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 0px;
+}
+
+.moreInfo_text{
+    font-size: var(--small-font-plus);
+    color: var(--text-black);
+    font-weight: 400;
+}
+
+.moreInfo_number{
+    font-size: var(--small-font-plus);
+    color: var(--text-gray);
+    font-weight: 400;
+}
+
+.moreInfo_number span{
+    font-size: var(--small-font);
+}
+
+.hr{
+    background: var(--borders-color);
+    height: 1px;
+    width: 100%;
+    margin: 20px 0;
+}
+
+.moreInfo_realCost{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.realCost_text{
+    font-size: var(--small-font-plus);
+    color: var(--text-black);
+    font-weight: 700;
+}
+
+.realCost_number{
+    font-size: var(--small-font-plus);
+    color: var(--text-black);
+    font-weight: 700;
 }

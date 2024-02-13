@@ -10,10 +10,11 @@ export const Cart = ({ cart }) => {
                         {cart.name}
                     </div>
                     <div className="food_price">
-                        {convertToPersianFormat(cart.price)}
+                        {convertToPersianFormat(cart.price)} <span>تومان</span>
                     </div>
                 </div>
             </div>
+            <div className='hr'></div>
         </>
     )
 }
