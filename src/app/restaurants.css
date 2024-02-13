@@ -227,6 +227,25 @@ body {
     height: 80px;
 }
 
+.delivery{
+    display: flex;
+    font-size: var(--small-font);
+}
+
+.delivery_icon{
+    font-size: var(--normal-font);
+}
+
+.delivery_info{
+    padding-right: 10px;
+    font-size: var(--small-font);
+    font-weight: 400;
+}
+
+.delivery_info span{
+    font-weight: 700;
+}
+
 .food_name{
     font-size: var(--small-font-plus);
     color: var(--text-black);

@@ -6,6 +6,8 @@ import { useMemo } from 'react';
 import { Cart } from './cart';
 import { convertToPersianFormat } from '../utlis/persianNumber';
 import { LuTrash2 } from "react-icons/lu";
+import { MdOutlineSportsMotorsports } from "react-icons/md";
+
 
 
 export const RestaurantInfoCard = ({ restaurant }) => {
@@ -29,6 +31,7 @@ export const RestaurantInfoCard = ({ restaurant }) => {
     return (
         <>
             <div className="RestaurantInfoCard">
+
                 <aside className="main_restaurantInfo">
                     <div className="restaurantInfo_header">
                         <div className="header_img">
@@ -43,6 +46,7 @@ export const RestaurantInfoCard = ({ restaurant }) => {
                         </div>
                     </div>
                 </aside>
+
                 <div className="main_foodsList">
                     <div className='foodList_menu'>
                         <p className='menu'>لیست غذا ها</p>
@@ -53,7 +57,16 @@ export const RestaurantInfoCard = ({ restaurant }) => {
                         ))}
                     </div>
                 </div>
+
                 <aside className="main_delivery-cart">
+                    <div className='delivery'>
+                        <div className='delivery_icon'>
+                            <MdOutlineSportsMotorsports />
+                        </div>
+                        <div className='delivery_info'>
+                            <p>اسنپ اکسپرس <span>{convertToPersianFormat(deliveryCost(restaurant.deliveryCost))}</span> تومان </p>
+                        </div>
+                    </div>
                     <div className='delivery-cart_count'>
                         <p>سبد خرید(<span>{convertToPersianFormat(cartCount)}</span>)</p>
                         <button className='count_icon'>
