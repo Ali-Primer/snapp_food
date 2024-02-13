@@ -9,6 +9,8 @@
     --theme-pink-color: #ff00a6;
     --info-color: #A6AAAD;
     --borders-color: #ebedf0;
+    --text-gray: #53565c;
+    --text-red-alert: #FA284B;
 }
 
 * {
@@ -183,5 +185,36 @@ body {
     width: 107px;
     height: 37px;
     padding: 1px 6px;
+    cursor: pointer;
+}
+
+.main_delivery-cart{
+    width: 22%;
+    border: 1px solid var(--borders-color);
+    padding: 25px 10px;
+}
+
+.delivery-cart_count{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.delivery-cart_count p{
+    font-size: var(--small-font-plus);
+    color: var(--text-gray);
+    font-weight: 700;
+}
+
+.delivery-cart_count span{
+    font-weight: 400;
+}
+
+.count_icon{
+    color: var(--text-red-alert);
+    font-size: var(--small-font-plus);
+    background: transparent;
+    border: 0;
+    outline: none;
     cursor: pointer;
 }

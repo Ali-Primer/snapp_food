@@ -1,6 +1,7 @@
 import { convertToPersianFormat } from "../utlis/persianNumber"
 
 export const Cart = ({ cart }) => {
+    
     return (
         <>
             <div className="cart">

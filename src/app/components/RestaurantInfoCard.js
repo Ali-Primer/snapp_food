@@ -5,6 +5,7 @@ import { useSelector } from 'react-redux';
 import { useMemo } from 'react';
 import { Cart } from './cart';
 import { convertToPersianFormat } from '../utlis/persianNumber';
+import { LuTrash2 } from "react-icons/lu";
 
 
 export const RestaurantInfoCard = ({ restaurant }) => {
@@ -44,7 +45,10 @@ export const RestaurantInfoCard = ({ restaurant }) => {
                 </div>
                 <aside className="main_delivery-cart">
                     <div className='delivery-cart_count'>
-                        {convertToPersianFormat(cartCount)}
+                        <p>سبد خرید(<span>{convertToPersianFormat(cartCount)}</span>)</p>
+                        <button className='count_icon'>
+                            <LuTrash2/>
+                        </button>
                     </div>
                     <div className='delivery-cart'>
                         {cart.map(c => (
