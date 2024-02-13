@@ -34,6 +34,7 @@ body {
     justify-content: center;
     align-items: center;
     padding: 1rem;
+    width: 20%;
 }
 
 .restaurantInfo_header {
@@ -104,8 +105,10 @@ body {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    width: 50%;
+    width: 55%;
 }
+
+
 
 .foodList_menu{
     text-align: center;
@@ -191,6 +194,14 @@ body {
 
 .main_delivery-cart{
     width: 22%;
+}
+
+.main_info_delivery-cart{
+    border: 1px solid var(--borders-color);
+    padding: 25px 10px;
+}
+
+.delivery{
     border: 1px solid var(--borders-color);
     padding: 25px 10px;
 }
