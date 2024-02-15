@@ -191,7 +191,14 @@ body {
     width: 107px;
     height: 37px;
     padding: 1px 6px;
+    transition: 0.3s;
     cursor: pointer;
+}
+
+.button2_add:hover{
+    color: white;
+    background: var(--theme-pink-color);
+    transition: 0.3s;
 }
 
 .main_delivery-cart{

@@ -26,6 +26,10 @@ export const cartSlice = createSlice({
                 state.cart[index].count += 1
             }
             console.log(state.cart);
+        },
+        decrease: (state, actions) => {
+            const index = state.cart.findIndex( item => item.id === actions.payload.id )
+            state.cart[index].count -= 1
         }
     }
 })

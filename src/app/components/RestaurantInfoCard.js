@@ -30,7 +30,10 @@ export const RestaurantInfoCard = ({ restaurant }) => {
     const dispatch = useDispatch()
     const addToCart = (food) => {
         dispatch(cartSlice.actions.addToCart(food));
-    };    
+    };
+    const decrease = (food) => {
+        dispatch(cartSlice.actions.decrease(food))
+    }
 
     return (
         <>
@@ -81,7 +84,7 @@ export const RestaurantInfoCard = ({ restaurant }) => {
                         </div>
                         <div className='delivery-cart'>
                             {cart.map(c => (
-                                <Cart addToCart={() => addToCart(c)} key={c.id} cart={c} />
+                                <Cart decrease={() => decrease(c)} addToCart={() => addToCart(c)} key={c.id} cart={c} />
                             ))}
                         </div>
 
