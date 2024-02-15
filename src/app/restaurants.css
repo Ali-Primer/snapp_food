@@ -32,7 +32,6 @@ body {
 .main_restaurantInfo {
     display: flex;
     justify-content: center;
-    align-items: center;
     padding: 1rem;
     width: 20%;
 }
@@ -71,6 +70,10 @@ body {
     font-weight: 700;
 }
 
+.header_img{
+    box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1);
+}
+
 .info_name{
     font-size: var(--normal-smaller-big-font);
     font-weight: 700;
@@ -103,7 +106,6 @@ body {
 .main_foodsList{
     display: flex;
     align-items: center;
-    justify-content: center;
     flex-direction: column;
     width: 55%;
 }
@@ -203,7 +205,8 @@ body {
 
 .delivery{
     border: 1px solid var(--borders-color);
-    padding: 25px 10px;
+    padding: 15px 5px;
+    margin-bottom: 15px;
 }
 
 .delivery-cart_count{
@@ -267,6 +270,8 @@ body {
     font-size: var(--small-font-plus);
     color: var(--text-black);
     font-weight: 700;
+    display: flex;
+    justify-content: space-between;
 }
 
 .food_price span{
@@ -326,3 +331,57 @@ body {
     color: var(--text-black);
     font-weight: 700;
 }
+
+
+.price_count{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100px;
+}
+
+.count_increase{
+    border-radius: 50%;
+    box-shadow: 0px 3px 4px 2px rgba(0,0,0,0.1);
+    width: 25px;
+    height: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.count_increase button{
+    color: var(--theme-pink-color);
+    background: transparent;
+    border: 0;
+    outline: none;
+    font-size: var(--normal-font);
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.count_decrease{
+    width: 25px;
+    height: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.count_decrease:hover{
+    background: var(--borders-color);
+}
+
+.decrease, .delete{
+    color: var(--info-color);
+    border: 0;
+    outline: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+

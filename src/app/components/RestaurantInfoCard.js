@@ -1,12 +1,13 @@
 import '../restaurants.css';
 import { FaStar } from "react-icons/fa6";
 import { Food } from './Food';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useMemo } from 'react';
 import { Cart } from './cart';
 import { convertToPersianFormat } from '../utlis/persianNumber';
 import { LuTrash2 } from "react-icons/lu";
 import { MdOutlineSportsMotorsports } from "react-icons/md";
+import { cartSlice } from '../redux/cartSlice';
 
 
 
@@ -25,9 +26,12 @@ export const RestaurantInfoCard = ({ restaurant }) => {
             return price
         }
     }
-    // const price = useMemo(() => cart.reduce((init, cur) => init = init + (cur.count * cur.price), 0), [cart])
-    console.log("cart: ", cart)
-    console.log("cartCount: ", cartCount);
+    
+    const dispatch = useDispatch()
+    const addToCart = (food) => {
+        dispatch(cartSlice.actions.addToCart(food));
+    };    
+
     return (
         <>
             <div className="RestaurantInfoCard">
@@ -53,7 +57,7 @@ export const RestaurantInfoCard = ({ restaurant }) => {
                     </div>
                     <div className='food_list'>
                         {foods.map(food => (
-                            <Food key={food.id} food={food} />
+                            <Food addToCart={() => addToCart(food)} key={food.id} food={food} />
                         ))}
                     </div>
                 </div>
@@ -77,7 +81,7 @@ export const RestaurantInfoCard = ({ restaurant }) => {
                         </div>
                         <div className='delivery-cart'>
                             {cart.map(c => (
-                                <Cart key={c.id} cart={c} />
+                                <Cart addToCart={() => addToCart(c)} key={c.id} cart={c} />
                             ))}
                         </div>
 
