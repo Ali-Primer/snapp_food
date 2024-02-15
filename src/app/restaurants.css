@@ -401,3 +401,28 @@ body {
     background: white;
 }
 
+.delivery_empty{
+    height: 250px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+}
+
+.empty_box{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    height: 50%;
+    color: var(--info-color);
+    font-weight: 600;
+}
+
+.empty_box-icon{
+    font-size: var(--big-font);
+}
+
+.empty_box-text{
+    font-size: var(--small-font);
+}

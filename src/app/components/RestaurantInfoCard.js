@@ -8,6 +8,7 @@ import { convertToPersianFormat } from '../utlis/persianNumber';
 import { LuTrash2 } from "react-icons/lu";
 import { MdOutlineSportsMotorsports } from "react-icons/md";
 import { cartSlice } from '../redux/cartSlice';
+import { LuShoppingBag } from "react-icons/lu";
 
 
 
@@ -18,7 +19,6 @@ export const RestaurantInfoCard = ({ restaurant }) => {
     const cartCount = useMemo(() => cart.reduce((init, cur) => init = init + cur.count, 0), [cart])
     const totalPrice = useMemo(() => cart.reduce((init, cur) => init = init + (cur.count * cur.price), 0), [cart])
     const realPrice = useMemo(() => totalPrice + 5000 + restaurant.deliveryCost, [cart])
-
     const deliveryCost = (price) => {
         if (price === 0) {
             return "رایگان";
@@ -26,7 +26,7 @@ export const RestaurantInfoCard = ({ restaurant }) => {
             return price
         }
     }
-    
+
     const dispatch = useDispatch()
 
     const addToCart = (food) => {
@@ -92,48 +92,63 @@ export const RestaurantInfoCard = ({ restaurant }) => {
                                 <LuTrash2 />
                             </button>
                         </div>
-                        <div className='delivery-cart'>
-                            {cart.map(c => (
-                                <Cart deleteFood={() => deleteFood(c)} decrease={() => decrease(c)} addToCart={() => addToCart(c)} key={c.id} cart={c} />
-                            ))}
-                        </div>
+                        {cart.length === 0 ?
+                            <div className='delivery_empty'>
+                                <div className='empty_box'>
+                                    <div className='empty_box-icon'>
+                                        <LuShoppingBag />
+                                    </div>
+                                    <div className='empty_box-text'>
+                                        <p>سبد خرید شما خالی است</p>
+                                    </div>
+                                </div>
+                            </div>
+                            :
+                            <>
+                                <div className='delivery-cart'>
+                                    {cart.map(c => (
+                                        <Cart deleteFood={() => deleteFood(c)} decrease={() => decrease(c)} addToCart={() => addToCart(c)} key={c.id} cart={c} />
+                                    ))}
+                                </div>
 
-                        <div className='delivery-cart_moreInfo'>
-                            <div className='moreInfo'>
-                                <p className='moreInfo_text'>
-                                    مجموع
-                                </p>
-                                <p className='moreInfo_number'>
-                                    {convertToPersianFormat(totalPrice)} <span>تومان</span>
-                                </p>
-                            </div>
-                            <div className='moreInfo'>
-                                <p className='moreInfo_text'>
-                                    هزینه بسته بندی
-                                </p>
-                                <p className='moreInfo_number'>
-                                    {convertToPersianFormat(5000)} <span>تومان</span>
-                                </p>
-                            </div>
-                            <div className='moreInfo'>
-                                <p className='moreInfo_text'>
-                                    هزینه ارسال
-                                </p>
-                                <p className='moreInfo_number'>
-                                    {convertToPersianFormat(deliveryCost(restaurant.deliveryCost))} <span>تومان</span>
-                                </p>
-                            </div>
-                            <div className='hr'></div>
+                                <div className='delivery-cart_moreInfo'>
+                                    <div className='moreInfo'>
+                                        <p className='moreInfo_text'>
+                                            مجموع
+                                        </p>
+                                        <p className='moreInfo_number'>
+                                            {convertToPersianFormat(totalPrice)} <span>تومان</span>
+                                        </p>
+                                    </div>
+                                    <div className='moreInfo'>
+                                        <p className='moreInfo_text'>
+                                            هزینه بسته بندی
+                                        </p>
+                                        <p className='moreInfo_number'>
+                                            {convertToPersianFormat(5000)} <span>تومان</span>
+                                        </p>
+                                    </div>
+                                    <div className='moreInfo'>
+                                        <p className='moreInfo_text'>
+                                            هزینه ارسال
+                                        </p>
+                                        <p className='moreInfo_number'>
+                                            {convertToPersianFormat(deliveryCost(restaurant.deliveryCost))} <span>تومان</span>
+                                        </p>
+                                    </div>
+                                    <div className='hr'></div>
 
-                            <div className='moreInfo_realCost'>
-                                <p className='realCost_text'>
-                                    قیمت قابل پرداخت
-                                </p>
-                                <p className='realCost_number'>
-                                    {convertToPersianFormat(realPrice)} <span>تومان</span>
-                                </p>
-                            </div>
-                        </div>
+                                    <div className='moreInfo_realCost'>
+                                        <p className='realCost_text'>
+                                            قیمت قابل پرداخت
+                                        </p>
+                                        <p className='realCost_number'>
+                                            {convertToPersianFormat(realPrice)} <span>تومان</span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </>
+                        }
                     </div>
                 </aside>
             </div>
