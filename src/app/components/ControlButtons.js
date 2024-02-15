@@ -1,7 +1,7 @@
 import { IoTrashOutline } from "react-icons/io5";
 import { convertToPersianFormat } from "../utlis/persianNumber";
 
-export const ControlButtons = ({ decrease, addToCart, cart }) => {
+export const ControlButtons = ({ deleteFood, decrease, addToCart, cart }) => {
     return (
         <>
             <div className="count_decrease">
@@ -11,7 +11,7 @@ export const ControlButtons = ({ decrease, addToCart, cart }) => {
                         -
                     </button>
                     :
-                    <button className="delete">
+                    <button onClick={deleteFood} className="delete">
                         <IoTrashOutline />
                     </button>
                 }

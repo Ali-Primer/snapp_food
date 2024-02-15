@@ -28,11 +28,17 @@ export const RestaurantInfoCard = ({ restaurant }) => {
     }
     
     const dispatch = useDispatch()
+
     const addToCart = (food) => {
-        dispatch(cartSlice.actions.addToCart(food));
-    };
+        dispatch(cartSlice.actions.addToCart(food))
+    }
+
     const decrease = (food) => {
         dispatch(cartSlice.actions.decrease(food))
+    }
+
+    const deleteFood = (food) => {
+        dispatch(cartSlice.actions.delete(food))
     }
 
     return (
@@ -84,7 +90,7 @@ export const RestaurantInfoCard = ({ restaurant }) => {
                         </div>
                         <div className='delivery-cart'>
                             {cart.map(c => (
-                                <Cart decrease={() => decrease(c)} addToCart={() => addToCart(c)} key={c.id} cart={c} />
+                                <Cart deleteFood={() => deleteFood(c)} decrease={() => decrease(c)} addToCart={() => addToCart(c)} key={c.id} cart={c} />
                             ))}
                         </div>
 

@@ -2,7 +2,7 @@ import { convertToPersianFormat } from "../utlis/persianNumber"
 import { ControlButtons } from "./ControlButtons"
 
 
-export const Cart = ({ decrease, addToCart ,cart }) => {
+export const Cart = ({ deleteFood, decrease, addToCart, cart }) => {
 
     return (
         <>
@@ -13,11 +13,11 @@ export const Cart = ({ decrease, addToCart ,cart }) => {
                     </div>
                     <div className="food_price">
                         <div>
-                        {convertToPersianFormat(cart.price)} <span>تومان</span>
+                            {convertToPersianFormat(cart.price)} <span>تومان</span>
                         </div>
 
                         <div className="price_count">
-                            <ControlButtons decrease={decrease} addToCart={addToCart} cart={cart}/>
+                            <ControlButtons deleteFood={deleteFood} decrease={decrease} addToCart={addToCart} cart={cart} />
                         </div>
                     </div>
                 </div>
