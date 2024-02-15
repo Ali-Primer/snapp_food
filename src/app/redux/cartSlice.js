@@ -34,6 +34,9 @@ export const cartSlice = createSlice({
         delete: (state, actios) => {
             const index = state.cart.findIndex(item => item.id === actios.payload.id)
             state.cart.splice(index, 1)
+        },
+        deleteAll: (state) => {
+            state.cart = []
         }
     }
 })

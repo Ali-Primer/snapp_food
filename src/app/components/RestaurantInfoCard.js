@@ -41,6 +41,10 @@ export const RestaurantInfoCard = ({ restaurant }) => {
         dispatch(cartSlice.actions.delete(food))
     }
 
+    const deleteAll = () => {
+        dispatch(cartSlice.actions.deleteAll())
+    }
+
     return (
         <>
             <div className="RestaurantInfoCard">
@@ -84,7 +88,7 @@ export const RestaurantInfoCard = ({ restaurant }) => {
                     <div className='main_info_delivery-cart'>
                         <div className='delivery-cart_count'>
                             <p>سبد خرید(<span>{convertToPersianFormat(cartCount)}</span>)</p>
-                            <button className='count_icon'>
+                            <button onClick={deleteAll} className='count_icon'>
                                 <LuTrash2 />
                             </button>
                         </div>
