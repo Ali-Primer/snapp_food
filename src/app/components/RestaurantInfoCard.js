@@ -2,7 +2,7 @@ import '../restaurants.css';
 import { FaStar } from "react-icons/fa6";
 import { Food } from './Food';
 import { useDispatch, useSelector } from 'react-redux';
-import { useMemo } from 'react';
+import { useMemo, useState } from 'react';
 import { Cart } from './cart';
 import { convertToPersianFormat } from '../utlis/persianNumber';
 import { LuTrash2 } from "react-icons/lu";
@@ -14,17 +14,22 @@ import { LuShoppingBag } from "react-icons/lu";
 
 export const RestaurantInfoCard = ({ restaurant }) => {
     const foods = restaurant.foods;
-
     const { cart } = useSelector((store) => store.cart)
     const cartCount = useMemo(() => cart.reduce((init, cur) => init = init + cur.count, 0), [cart])
     const totalPrice = useMemo(() => cart.reduce((init, cur) => init = init + (cur.count * cur.price), 0), [cart])
     const realPrice = useMemo(() => totalPrice + 5000 + restaurant.deliveryCost, [cart])
+    const [isClicked, setIsClicked] = useState(false)
+    
     const deliveryCost = (price) => {
         if (price === 0) {
             return "رایگان";
         } else {
             return price
         }
+    }
+
+    const isClickedHandler = () => {
+        setIsClicked(!isClicked)
     }
 
     const dispatch = useDispatch()
@@ -47,6 +52,7 @@ export const RestaurantInfoCard = ({ restaurant }) => {
 
     return (
         <>
+            <div className={isClicked ? 'darkBackground' : 'darkBackground-none'}></div>
             <div className="RestaurantInfoCard">
 
                 <aside className="main_restaurantInfo">
@@ -70,7 +76,7 @@ export const RestaurantInfoCard = ({ restaurant }) => {
                     </div>
                     <div className='food_list'>
                         {foods.map(food => (
-                            <Food addToCart={() => addToCart(food)} key={food.id} food={food} />
+                            <Food isClicked={isClickedHandler} addToCart={() => addToCart(food)} key={food.id} food={food} />
                         ))}
                     </div>
                 </div>

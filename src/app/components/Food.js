@@ -1,10 +1,11 @@
 import { convertToPersianFormat } from "../utlis/persianNumber"
 
-export const Food = ({ addToCart ,food }) => {
+export const Food = ({  isClicked, addToCart, food }) => {
+    
     return (
         <>
             <div className="food">
-                <div className="food_header">
+                <div className="food_header" onClick={() => isClicked()}>
                     <div className="food_header_info">
                         <div className="food_header_title">
                             <p>
