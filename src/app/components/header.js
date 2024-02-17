@@ -8,6 +8,8 @@ import logo from '../../../public/Logo/images.png'
 import { categories } from "../db/categoryHeader";
 import { HeaderCards } from "./headerCard";
 import Link from "next/link";
+import { useDispatch, useSelector } from "react-redux";
+import { isClicked } from "../redux/isClicked";
 
 
 
@@ -16,10 +18,17 @@ import Link from "next/link";
 export const Header = () => {
 
     const CATEGORIES = categories
+    const dispatch = useDispatch()
+    const clicked = useSelector((state) => state.clicked)
+
+    const clickHandler = () => {
+        dispatch(isClicked.actions.isClickedHandler())
+    }
 
     return (
         <>
             <div className="header">
+            <div className={clicked ? 'darkBackground_header' : 'darkBackground-none_header'} onClick={clickHandler}></div>
                 <div className="header_main">
                     <div className="main_container">
                         <div className="main_right">

@@ -1,11 +1,19 @@
+import { useDispatch } from "react-redux"
 import { convertToPersianFormat } from "../utlis/persianNumber"
+import { isClicked } from "../redux/isClicked"
 
-export const Food = ({  isClicked, addToCart, food }) => {
+export const Food = ({ addToCart, food }) => {
     
+    const dispatch = useDispatch()
+
+    const isClickedHandler = () => {
+        dispatch(isClicked.actions.isClickedHandler())
+    }
+
     return (
         <>
             <div className="food">
-                <div className="food_header" onClick={() => isClicked()}>
+                <div className="food_header" onClick={isClickedHandler}>
                     <div className="food_header_info">
                         <div className="food_header_title">
                             <p>

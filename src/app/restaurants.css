@@ -10,6 +10,7 @@
     --info-color: #A6AAAD;
     --borders-color: #ebedf0;
     --text-gray: #53565c;
+    --background-gray: #53565c83;
     --text-red-alert: #FA284B;
     --text-black: #3A3D42;
 }
@@ -124,6 +125,7 @@ body {
     align-items: center;
     padding: 0 5px;
     height: 150px;
+    cursor: pointer;
 }
 
 .food_header_img {
@@ -431,6 +433,22 @@ body {
     font-size: var(--small-font);
 }
 
+.darkBackground{
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 150%;
+    opacity: 1;
+    transition: all 0.3s;
+    background: var(--background-gray);
+    z-index: 10;
+}
+
+.darkBackground-none{
+    display: none;
+}
 
 @media only screen and (min-width: 767px) {
     .RestaurantInfoCard {
