@@ -54,6 +54,7 @@ body {
 
 .restaurantInfo_header {
     height: 88px;
+    width: 210px;
 }
 
 .header_info {
@@ -61,6 +62,7 @@ body {
     justify-content: space-between;
     flex-direction: column;
     height: 50%;
+    width: 150px;
 }
 
 .info_rating {
@@ -450,6 +452,13 @@ body {
     display: none;
 }
 
+.popUp{
+    position: fixed;
+    display: flex;
+    width: 50%;
+    
+}
+
 @media only screen and (min-width: 767px) {
     .RestaurantInfoCard {
         grid-template-columns: repeat(2, 1fr);
@@ -473,7 +482,6 @@ body {
     .main_delivery-cart{
         grid-column-start: 3;
         grid-column-end: 3;
-        width: 200px;
     }
 
     .main_foodsList{
@@ -481,5 +489,17 @@ body {
     }
     .main_restaurantInfo{
         width: 200px;   
+    }
+    .food{
+        width: 250px;
+    }
+}
+
+@media only screen and (min-width: 1439px){
+    .food{
+        width: 350px;
+    }
+    .main_foodsList{
+        width: 730px;
     }
 }

@@ -1,19 +1,30 @@
 import { useDispatch } from "react-redux"
 import { convertToPersianFormat } from "../utlis/persianNumber"
 import { isClicked } from "../redux/isClicked"
+import { cartSlice } from "../redux/cartSlice"
 
 export const Food = ({ addToCart, food }) => {
-    
+
     const dispatch = useDispatch()
 
-    const isClickedHandler = () => {
+    const isClickedHandler = (food) => {
         dispatch(isClicked.actions.isClickedHandler())
+        dispatch(cartSlice.actions.clicked(food))
     }
 
+    const textSlice = (text) => {
+        const maxLength = 30
+        if (text.length > maxLength) {
+            const slicedText = text.slice(0, maxLength) + '...'
+            return slicedText
+        }
+        return text
+    }
+    
     return (
         <>
             <div className="food">
-                <div className="food_header" onClick={isClickedHandler}>
+                <div className="food_header" onClick={() => isClickedHandler(food)}>
                     <div className="food_header_info">
                         <div className="food_header_title">
                             <p>
@@ -22,7 +33,7 @@ export const Food = ({ addToCart, food }) => {
                         </div>
                         <div className="food_header_text">
                             <p>
-                                {food.info}
+                                {textSlice(food.info)}
                             </p>
                         </div>
                     </div>

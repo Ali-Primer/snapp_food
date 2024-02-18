@@ -1,14 +1,15 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { Restaurant } from "../db/Restaurant";
 
 export const cartSlice = createSlice({
     name: "cart",
     initialState: {
-        cart: []
+        cart: [],
+        selected: {}
     },
     reducers: {
         addToCart: (state, actions) => {
             const index = state.cart.findIndex(item => item.id === actions.payload.id)
-            console.log(index);
             const isNotFound = index == -1
             if (isNotFound) {
                 state.cart.push({ ...actions.payload, count: 1 })
@@ -16,7 +17,6 @@ export const cartSlice = createSlice({
             else {
                 state.cart[index].count += 1
             }
-            console.log(state.cart);
         },
         decrease: (state, actions) => {
             const index = state.cart.findIndex(item => item.id === actions.payload.id)
@@ -28,6 +28,16 @@ export const cartSlice = createSlice({
         },
         deleteAll: (state) => {
             state.cart = []
+        },
+        clicked: (state, actions) => {
+            const foodId = actions.payload.id
+            const foundFood = Restaurant.flatMap(restaurant => restaurant.foods).find(food => food.id === foodId)
+            if (foundFood) {
+                state.selected = foundFood
+                console.log(state.selected);
+            } else {
+                console.log("food not found");
+            }
         }
     }
 })

@@ -50,6 +50,7 @@ body {
   position: fixed;
   background: white;
   border-bottom: 1px var(--light-gray-color) solid;
+  z-index: 20;
   top: 0;
 }
 

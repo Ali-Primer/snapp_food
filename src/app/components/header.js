@@ -10,6 +10,7 @@ import { HeaderCards } from "./headerCard";
 import Link from "next/link";
 import { useDispatch, useSelector } from "react-redux";
 import { isClicked } from "../redux/isClicked";
+import { cartSlice } from "../redux/cartSlice";
 
 
 
@@ -20,15 +21,46 @@ export const Header = () => {
     const CATEGORIES = categories
     const dispatch = useDispatch()
     const clicked = useSelector((state) => state.clicked)
+    const {selected} = useSelector((state) => state.cart)
 
     const clickHandler = () => {
         dispatch(isClicked.actions.isClickedHandler())
+        dispatch(cartSlice.actions.clicked())
     }
+
+
 
     return (
         <>
             <div className="header">
-            <div className={clicked ? 'darkBackground_header' : 'darkBackground-none_header'} onClick={clickHandler}></div>
+
+
+                <div className={clicked ? 'darkBackground_header' : 'darkBackground-none_header'} onClick={clickHandler}>
+                    {/* <div className="popUp">
+                        <div className="popUp_img">
+                            <img src={food.image} />
+                        </div>
+                        <div className="popUp_info">
+                            <div className="info_header">
+                                <p className="title">{food.name}</p>
+                                <p className="rating">{food.rating}</p>
+                            </div>
+                            <div className="info">
+                                <p>{food.info}</p>
+                            </div>
+                        </div>
+                        <div className="popUp_add">
+                            <div className="box_price">
+                                {convertToPersianFormat(food.price)} <span className="tooman">تومان</span>
+                            </div>
+                            <div className="box_button2">
+                                <button onClick={addToCart} className="button2_add">افزودن</button>
+                            </div>
+                        </div>
+                    </div> */}
+                </div>
+
+
                 <div className="header_main">
                     <div className="main_container">
                         <div className="main_right">
