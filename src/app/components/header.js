@@ -11,6 +11,8 @@ import Link from "next/link";
 import { useDispatch, useSelector } from "react-redux";
 import { isClicked } from "../redux/isClicked";
 import { cartSlice } from "../redux/cartSlice";
+import { convertToPersianFormat } from "../utlis/persianNumber";
+import { RxCross1 } from "react-icons/rx";
 
 
 
@@ -21,13 +23,15 @@ export const Header = () => {
     const CATEGORIES = categories
     const dispatch = useDispatch()
     const clicked = useSelector((state) => state.clicked)
-    const {selected} = useSelector((state) => state.cart)
+    const { selected } = useSelector((state) => state.cart)
 
     const clickHandler = () => {
         dispatch(isClicked.actions.isClickedHandler())
-        dispatch(cartSlice.actions.clicked())
     }
 
+    const addToCart = (food) => {
+        dispatch(cartSlice.actions.addToCart(food))
+    }
 
 
     return (
@@ -36,28 +40,38 @@ export const Header = () => {
 
 
                 <div className={clicked ? 'darkBackground_header' : 'darkBackground-none_header'} onClick={clickHandler}>
-                    {/* <div className="popUp">
-                        <div className="popUp_img">
-                            <img src={food.image} />
-                        </div>
-                        <div className="popUp_info">
-                            <div className="info_header">
-                                <p className="title">{food.name}</p>
-                                <p className="rating">{food.rating}</p>
-                            </div>
-                            <div className="info">
-                                <p>{food.info}</p>
+                    <div className="popUp_box">
+                        <div className="close_button">
+                            <div className="button_box">
+                                <button>
+                                    <RxCross1 />
+                                </button>
                             </div>
                         </div>
-                        <div className="popUp_add">
-                            <div className="box_price">
-                                {convertToPersianFormat(food.price)} <span className="tooman">تومان</span>
+                        <div className="popUp">
+
+                            <div className="popUp_img">
+                                <img src={selected.image} />
                             </div>
-                            <div className="box_button2">
-                                <button onClick={addToCart} className="button2_add">افزودن</button>
+                            <div className="popUp_info">
+                                <div className="info_header">
+                                    <p className="title">{selected.name}</p>
+                                    <p className="rating">{selected.rating}</p>
+                                </div>
+                                <div className="info">
+                                    <p>{selected.info}</p>
+                                </div>
+                                <div className="popUp_add">
+                                    <div className="box_price">
+                                        {convertToPersianFormat(selected.price)} <span className="tooman">تومان</span>
+                                    </div>
+                                    <div className="box_button2">
+                                        <button onClick={() => addToCart(selected)} className="button2_add">افزودن</button>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </div> */}
+                    </div>
                 </div>
 
 

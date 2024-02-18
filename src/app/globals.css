@@ -1,11 +1,14 @@
 :root {
   --normal-bigger-font: 2rem;
+  --normal-smaller-big-font: 1.8rem;
   --small-font: 1.2rem;
+  --small-font-plus: 1.4rem;
   --normal-font: 1.6rem;
   --big-font: 3.2rem;
   --smaller-big-font: 2.6rem;
   --dark-gray-color: rgb(83, 86, 92);
   --restaurants-color: #3a3d60;
+  --text-black: #3A3D42;
   --gray-color: #9d9ea1;
   --gray-background: #ebedf0;
   --light-gray-color: #d1d2d2;
@@ -31,16 +34,19 @@ body {
 }
 
 
-.darkBackground_header{
+.darkBackground_header {
   position: fixed;
   z-index: 12;
   background: var(--background-gray);
   width: 100%;
   height: 100%;
   display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.darkBackground-none_header{
+.darkBackground-none_header {
   display: none;
 }
 
@@ -246,13 +252,13 @@ body {
   height: 260px;
   border-radius: 8px;
   margin-bottom: 40px;
-  box-shadow: 0px 10px 22px 0px rgba(0,0,0,0.1);
+  box-shadow: 0px 10px 22px 0px rgba(0, 0, 0, 0.1);
   cursor: pointer;
   transition: 0.5s;
 }
 
-.RestaurantCard:hover{
-  box-shadow: 0px 10px 14px 17px rgba(0,0,0,0.1);
+.RestaurantCard:hover {
+  box-shadow: 0px 10px 14px 17px rgba(0, 0, 0, 0.1);
   transition: 0.5s;
 }
 
@@ -331,7 +337,7 @@ body {
   border-radius: 20px;
 }
 
-.Contact_image{
+.Contact_image {
   display: none;
 }
 
@@ -429,7 +435,7 @@ body {
   font-weight: 400;
 }
 
-.box_image{
+.box_image {
   display: none;
 }
 
@@ -581,7 +587,7 @@ li {
   margin-right: 325px;
 }
 
-.respond{
+.respond {
   border-radius: 50px;
   background: var(--theme-pink-color);
   position: fixed;
@@ -599,11 +605,81 @@ li {
   font-weight: 800;
 }
 
-.respond:hover{
+.respond:hover {
   background: var(--theme-pink-color-hover);
 }
 
+.popUp_box {
+  position: fixed;
+  flex-direction: column;
+  display: flex;
+  justify-content: space-around;
+  width: 73%;
+  background: white;
+  border-radius: 10px;
+  padding: 16px;
+}
+
+.popUp_img {
+  width: 280px;
+  height: 280px;
+}
+
+.popUp_img img {
+  width: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.popUp_info {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.title {
+  margin-top: 40px;
+  padding-bottom: 25px;
+  font-size: var(--normal-smaller-big-font);
+  font-weight: 700;
+  color: var(--text-black);
+}
+
+.info{
+  font-size: var(--small-font-plus);
+  font-weight: 400;
+  color: var(--text-black);
+  padding-bottom: 75px;
+  line-height: 20px;
+}
+
+.popUp_add{
+  display: flex;
+  justify-content: space-between;
+}
+
+.box_price{
+  font-size: var(--small-font-plus);
+}
+
+.close_button{
+  margin-bottom: 10px;
+  display: flex;
+  padding: 5px;
+}
+
+.close_button button{
+  border: 0;
+  outline: none;
+  background: transparent;
+  font-size: var(--normal-bigger-font);
+}
+
 @media only screen and (min-width: 765px) {
+
+  .popUp_box{
+    width: 40%;
+  }
 
   .main {
     margin-top: 155px;
@@ -700,6 +776,22 @@ li {
 
 @media only screen and (min-width: 1024px) {
 
+  .popUp_box{
+    width: 80%;
+    justify-content: space-between;
+  }
+
+  .popUp{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    width: 100%;
+  }
+
+  .popUp_info{
+    width: 60%;
+  }
+
   .left_buys {
     display: flex;
     margin-top: 5px;
@@ -715,57 +807,57 @@ li {
     grid-template-columns: repeat(4, 1fr);
   }
 
-  .type_list{
+  .type_list {
     grid-template-columns: repeat(3, 1fr);
   }
 
-  .RestaurantCard{
+  .RestaurantCard {
     width: 317px;
   }
 
-  .Contact{
+  .Contact {
     display: flex;
     justify-content: space-between;
     padding: 40px;
   }
 
-  .Contact_infos{
+  .Contact_infos {
     width: 500px;
   }
 
-  .Contact_image{
+  .Contact_image {
     display: block;
     width: 424px;
     height: 620px;
   }
-  
-  .Contact_image img{
+
+  .Contact_image img {
     width: 424px;
     height: 100%;
     object-fit: cover;
     margin-top: -150px;
   }
 
-  .infos_links{
+  .infos_links {
     grid-template-columns: repeat(2, 1fr);
     column-gap: 0;
   }
 
-  .Seller_SignUp{
+  .Seller_SignUp {
     display: flex;
   }
 
-  .box_image{
+  .box_image {
     width: 266px;
     display: block;
   }
 
-  .box_image img{
+  .box_image img {
     width: 100%;
     height: 100%;
   }
 
-  .list{
+  .list {
     grid-template-columns: repeat(6, 1fr);
   }
 
@@ -779,12 +871,17 @@ li {
   }
 }
 
-@media only screen and (min-width: 1024px){
-  .Seller_SignUp{
+@media only screen and (min-width: 1440px) {
+
+  .popUp_box{
+    width: 60%;
+  }
+
+  .Seller_SignUp {
     justify-content: space-between;
   }
-  
-  .box_image{
+
+  .box_image {
     margin-right: 40px;
   }
 
@@ -792,11 +889,11 @@ li {
     grid-template-columns: repeat(6, 1fr);
   }
 
-  .type_list{
+  .type_list {
     grid-template-columns: repeat(4, 1fr);
   }
 
-  .list{
+  .list {
     grid-template-columns: repeat(12, 1fr);
   }
 }

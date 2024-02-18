@@ -452,13 +452,6 @@ body {
     display: none;
 }
 
-.popUp{
-    position: fixed;
-    display: flex;
-    width: 50%;
-    
-}
-
 @media only screen and (min-width: 767px) {
     .RestaurantInfoCard {
         grid-template-columns: repeat(2, 1fr);
@@ -471,6 +464,10 @@ body {
 
     .food{
         width: 50%;
+    }
+
+    .button2_add{
+        width: 100px;
     }
 }
 
