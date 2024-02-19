@@ -61,7 +61,7 @@ body {
 }
 
 .header_main {
-  height: 25%;
+  height: 30%;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
@@ -805,6 +805,27 @@ li {
     display: block;
     font-size: 14px;
     font-weight: 700;
+  }
+
+  .search_button{
+    top: 5px;
+  }
+
+  .main_right{
+    width: 20%;
+  }
+
+  .main_search {
+    display: flex;
+    position: relative;
+    width: 45%;
+  }
+
+  .main_search input {
+    display: block;
+    padding-right: 25px;
+    width: 60%;
+    height: 30px;
   }
 
   .CardList {
