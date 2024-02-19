@@ -435,7 +435,7 @@ body {
     font-size: var(--small-font);
 }
 
-.darkBackground{
+.darkBackground {
     position: fixed;
     display: flex;
     justify-content: center;
@@ -448,7 +448,7 @@ body {
     z-index: 10;
 }
 
-.darkBackground-none{
+.darkBackground-none {
     display: none;
 }
 
@@ -457,46 +457,55 @@ body {
         grid-template-columns: repeat(2, 1fr);
     }
 
-    .main_delivery-cart{
+    .main_delivery-cart {
         grid-column-start: 1;
         grid-column-end: 3;
     }
 
-    .food{
+    .food_list {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .food {
         width: 50%;
     }
 
-    .button2_add{
+    .button2_add {
         width: 100px;
     }
 }
 
 
-@media only screen and (min-width: 1023px){
+@media only screen and (min-width: 1023px) {
     .RestaurantInfoCard {
         grid-template-columns: repeat(3, 1fr);
     }
-    .main_delivery-cart{
+
+    .main_delivery-cart {
         grid-column-start: 3;
         grid-column-end: 3;
     }
 
-    .main_foodsList{
+    .main_foodsList {
         width: 530px;
     }
-    .main_restaurantInfo{
-        width: 200px;   
+
+    .main_restaurantInfo {
+        width: 200px;
     }
-    .food{
+
+    .food {
         width: 250px;
     }
 }
 
-@media only screen and (min-width: 1439px){
-    .food{
+@media only screen and (min-width: 1439px) {
+    .food {
         width: 350px;
     }
-    .main_foodsList{
+
+    .main_foodsList {
         width: 730px;
     }
 }

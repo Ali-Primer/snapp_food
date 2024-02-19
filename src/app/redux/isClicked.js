@@ -5,7 +5,10 @@ export const isClicked = createSlice({
     initialState: false,
     reducers: {
         isClickedHandler: (state) => {
-            return !state
+            return true; // Return a new state value
+        },
+        closeHandler: (state) => {
+            return false; // Return a new state value
         }
     }
 })

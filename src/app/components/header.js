@@ -25,8 +25,13 @@ export const Header = () => {
     const clicked = useSelector((state) => state.clicked)
     const { selected } = useSelector((state) => state.cart)
 
-    const clickHandler = () => {
-        dispatch(isClicked.actions.isClickedHandler())
+    const clickHandler = (className) => {
+        if (className === "close_button") {
+            dispatch(isClicked.actions.closeHandler())
+        }
+        else{
+            dispatch(isClicked.actions.isClickedHandler())
+        }
     }
 
     const addToCart = (food) => {
@@ -39,10 +44,10 @@ export const Header = () => {
             <div className="header">
 
 
-                <div className={clicked ? 'darkBackground_header' : 'darkBackground-none_header'} onClick={clickHandler}>
+                <div className={clicked ? 'darkBackground_header' : 'darkBackground-none_header'}>
                     <div className="popUp_box">
                         <div className="close_button">
-                            <div className="button_box">
+                            <div className="button_box" onClick={() => clickHandler("close_button")}>
                                 <button>
                                     <RxCross1 />
                                 </button>

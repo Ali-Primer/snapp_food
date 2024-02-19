@@ -668,6 +668,10 @@ li {
   padding: 5px;
 }
 
+.button_box button{
+  cursor: pointer;
+}
+
 .close_button button{
   border: 0;
   outline: none;
