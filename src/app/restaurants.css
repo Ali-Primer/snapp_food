@@ -452,6 +452,25 @@ body {
     display: none;
 }
 
+.moreInfo_submit{
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 40px;
+}
+
+.submit_button{
+    width: 95%;
+    border-radius: 5px;
+    border: 0;
+    outline: none;
+    background: var(--theme-pink-color);
+    color: white;
+    font-weight: 700;
+    font-size: var(--normal-bigger-font);
+}
+
 @media only screen and (min-width: 767px) {
     .RestaurantInfoCard {
         grid-template-columns: repeat(2, 1fr);
@@ -468,7 +487,7 @@ body {
     }
 
     .food {
-        width: 50%;
+        width: 100%;
     }
 
     .button2_add {

@@ -9,6 +9,7 @@ import { LuTrash2 } from "react-icons/lu";
 import { MdOutlineSportsMotorsports } from "react-icons/md";
 import { cartSlice } from '../redux/cartSlice';
 import { LuShoppingBag } from "react-icons/lu";
+import { historySlice } from '../redux/historySlice';
 
 
 
@@ -19,6 +20,8 @@ export const RestaurantInfoCard = ({ restaurant }) => {
     const totalPrice = useMemo(() => cart.reduce((init, cur) => init = init + (cur.count * cur.price), 0), [cart])
     const realPrice = useMemo(() => totalPrice + 5000 + restaurant.deliveryCost, [cart])
     
+    const history = useSelector((store) => store.history)
+
     const deliveryCost = (price) => {
         if (price === 0) {
             return "رایگان";
@@ -42,6 +45,11 @@ export const RestaurantInfoCard = ({ restaurant }) => {
     }
 
     const deleteAll = () => {
+        dispatch(cartSlice.actions.deleteAll())
+    }
+
+    const addToHistory = () => {
+        dispatch(historySlice.actions.addToHistory({foods: cart, totalPrice: realPrice}))
         dispatch(cartSlice.actions.deleteAll())
     }
 
@@ -145,6 +153,14 @@ export const RestaurantInfoCard = ({ restaurant }) => {
                                         <p className='realCost_number'>
                                             {convertToPersianFormat(realPrice)} <span>تومان</span>
                                         </p>
+                                    </div>
+
+                                    <div className='moreInfo_submit'>
+                                        <button className='submit_button' onClick={addToHistory}>
+                                            <p className='button_text'>
+                                                ثبت سفارش
+                                            </p>
+                                        </button>
                                     </div>
                                 </div>
                             </>
