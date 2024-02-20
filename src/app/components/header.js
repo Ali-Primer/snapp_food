@@ -15,15 +15,13 @@ import { convertToPersianFormat } from "../utlis/persianNumber";
 import { RxCross1 } from "react-icons/rx";
 
 
-
-
-
 export const Header = () => {
 
     const CATEGORIES = categories
     const dispatch = useDispatch()
     const clicked = useSelector((state) => state.clicked)
     const { selected } = useSelector((state) => state.cart)
+    const history = useSelector((store) => store.history)
 
     const clickHandler = (className) => {
         if (className === "close_button") {
@@ -44,8 +42,8 @@ export const Header = () => {
             <div className="header">
 
 
-                <div className={clicked ? 'darkBackground_header' : 'darkBackground-none_header'}>
-                    <div className="popUp_box">
+                <div className={clicked ? 'darkBackground_header' : 'darkBackground-none_header'} onClick={() => clickHandler("close_button")}></div>
+                    <div className={clicked ? 'popUp_box' :  'popUp-hidden_box'}>
                         <div className="close_button">
                             <div className="button_box" onClick={() => clickHandler("close_button")}>
                                 <button>
@@ -77,7 +75,6 @@ export const Header = () => {
                             </div>
                         </div>
                     </div>
-                </div>
 
 
                 <div className="header_main">

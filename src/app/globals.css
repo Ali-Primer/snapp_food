@@ -618,6 +618,12 @@ li {
   background: white;
   border-radius: 10px;
   padding: 16px;
+  z-index: 20;
+  margin: 2% 13%;
+}
+
+.popUp-hidden_box{
+  display: none;
 }
 
 .popUp_img {
@@ -683,6 +689,7 @@ li {
 
   .popUp_box{
     width: 40%;
+    margin: 2% 30%;
   }
 
   .main {
@@ -783,6 +790,7 @@ li {
   .popUp_box{
     width: 80%;
     justify-content: space-between;
+    margin: 26% 10%;
   }
 
   .popUp{
@@ -900,6 +908,7 @@ li {
 
   .popUp_box{
     width: 60%;
+    margin: 150px 270px;
   }
 
   .Seller_SignUp {

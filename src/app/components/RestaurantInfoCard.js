@@ -19,8 +19,6 @@ export const RestaurantInfoCard = ({ restaurant }) => {
     const cartCount = useMemo(() => cart.reduce((init, cur) => init = init + cur.count, 0), [cart])
     const totalPrice = useMemo(() => cart.reduce((init, cur) => init = init + (cur.count * cur.price), 0), [cart])
     const realPrice = useMemo(() => totalPrice + 5000 + restaurant.deliveryCost, [cart])
-    
-    const history = useSelector((store) => store.history)
 
     const deliveryCost = (price) => {
         if (price === 0) {
