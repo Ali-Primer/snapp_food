@@ -108,6 +108,7 @@ body {
   border-radius: 8px;
   height: 24px;
   display: none;
+  background: #ebedf0;
 }
 
 .search_button {
@@ -850,14 +851,14 @@ li {
   .main_search {
     display: flex;
     position: relative;
-    width: 45%;
+    width: 37%;
   }
 
   .main_search input {
     display: block;
     padding-right: 25px;
-    width: 60%;
-    height: 30px;
+    width: 70%;
+    height: 38px;
   }
 
   .CardList {

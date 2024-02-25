@@ -29,6 +29,9 @@ export const Header = () => {
         if (className === "history") {
             dispatch(isClicked.actions.isClickedHandlerHistory())
         }
+        if (className === "search") {
+            dispatch(isClicked.actions.isClickedHandlerSearch())
+        }
     }
 
     const addToCart = (food) => {
@@ -89,9 +92,9 @@ export const Header = () => {
                                 <IoIosArrowDown className="address_dropDown" />
                             </div>
                         </div>
-                        <div className="main_search">
-                            <input placeholder="جست و جو در اسنپ فود" />
-                            <IoSearch className="search_button" />
+                        <div>
+                            <input placeholder="جست و جو در اسنپ فود" onClick={() => clickHandler("search")}/>
+                            <IoSearch className="search_button" onClick={() => clickHandler("search")} />
                         </div>
                         <div className="main_left" onClick={() => clickHandler("history")}>
                             <div className="left_account">

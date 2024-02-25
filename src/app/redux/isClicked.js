@@ -5,7 +5,8 @@ export const isClicked = createSlice({
     initialState: {
         darkBackground: false,
         foodInfo: false,
-        history: false
+        history: false,
+        search: false
     },
     reducers: {
         isClickedHandlerFood: (state) => {
@@ -15,6 +16,10 @@ export const isClicked = createSlice({
         isClickedHandlerHistory: (state) => {
             state.darkBackground = true
             state.history = true
+        },
+        isClickedHandlerSearch: (state) => {
+            state.darkBackground = true
+            state.search = true
         },
         closeHandler: (state) => {
             state.darkBackground = false
