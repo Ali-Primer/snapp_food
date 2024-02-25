@@ -8,7 +8,7 @@ export const Food = ({ addToCart, food }) => {
     const dispatch = useDispatch()
 
     const isClickedHandler = (food) => {
-        dispatch(isClicked.actions.isClickedHandler())
+        dispatch(isClicked.actions.isClickedHandlerFood())
         dispatch(cartSlice.actions.clicked(food))
     }
 

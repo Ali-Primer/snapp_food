@@ -2,13 +2,24 @@ import { createSlice } from "@reduxjs/toolkit";
 
 export const isClicked = createSlice({
     name: "isClicked",
-    initialState: false,
+    initialState: {
+        darkBackground: false,
+        foodInfo: false,
+        history: false
+    },
     reducers: {
-        isClickedHandler: (state) => {
-            return true
+        isClickedHandlerFood: (state) => {
+            state.darkBackground = true
+            state.foodInfo = true
+        },
+        isClickedHandlerHistory: (state) => {
+            state.darkBackground = true
+            state.history = true
         },
         closeHandler: (state) => {
-            return false
+            state.darkBackground = false
+            state.foodInfo = false
+            state.history = false
         }
     }
 })

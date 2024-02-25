@@ -121,8 +121,8 @@ body {
   align-items: center;
   width: 35%;
   font-size: var(--normal-bigger-font);
+  cursor: pointer;
 }
-
 
 .header_category {
   display: flex;
@@ -683,6 +683,30 @@ li {
   outline: none;
   background: transparent;
   font-size: var(--normal-bigger-font);
+}
+
+@keyframes slideToRight{
+  0%{
+    transform: translateX(-350px);
+  }
+  100%{
+    transform: translateX(0px);
+  }
+}
+
+.history-main{
+  height: 200%;
+  width: 350px;
+  background: white;
+  position: fixed;
+  z-index: 20;
+  animation-name: slideToRight;
+  animation-duration: 0.3s;
+  padding: 10px 5px;
+}
+
+.history{
+  border: 1px solid var(--gray-color);
 }
 
 @media only screen and (min-width: 765px) {

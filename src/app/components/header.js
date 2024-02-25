@@ -21,14 +21,13 @@ export const Header = () => {
     const dispatch = useDispatch()
     const clicked = useSelector((state) => state.clicked)
     const { selected } = useSelector((state) => state.cart)
-    const history = useSelector((store) => store.history)
 
     const clickHandler = (className) => {
         if (className === "close_button") {
             dispatch(isClicked.actions.closeHandler())
         }
-        else{
-            dispatch(isClicked.actions.isClickedHandler())
+        if (className === "history") {
+            dispatch(isClicked.actions.isClickedHandlerHistory())
         }
     }
 
@@ -36,45 +35,44 @@ export const Header = () => {
         dispatch(cartSlice.actions.addToCart(food))
     }
 
-
     return (
         <>
             <div className="header">
 
 
-                <div className={clicked ? 'darkBackground_header' : 'darkBackground-none_header'} onClick={() => clickHandler("close_button")}></div>
-                    <div className={clicked ? 'popUp_box' :  'popUp-hidden_box'}>
-                        <div className="close_button">
-                            <div className="button_box" onClick={() => clickHandler("close_button")}>
-                                <button>
-                                    <RxCross1 />
-                                </button>
-                            </div>
+                <div className={clicked.darkBackground ? 'darkBackground_header' : 'darkBackground-none_header'} onClick={() => clickHandler("close_button")}></div>
+                <div className={clicked.foodInfo ? 'popUp_box' : 'popUp-hidden_box'}>
+                    <div className="close_button">
+                        <div className="button_box" onClick={() => clickHandler("close_button")}>
+                            <button>
+                                <RxCross1 />
+                            </button>
                         </div>
-                        <div className="popUp">
+                    </div>
+                    <div className="popUp">
 
-                            <div className="popUp_img">
-                                <img src={selected.image} />
+                        <div className="popUp_img">
+                            <img src={selected.image} />
+                        </div>
+                        <div className="popUp_info">
+                            <div className="info_header">
+                                <p className="title">{selected.name}</p>
+                                <p className="rating">{selected.rating}</p>
                             </div>
-                            <div className="popUp_info">
-                                <div className="info_header">
-                                    <p className="title">{selected.name}</p>
-                                    <p className="rating">{selected.rating}</p>
+                            <div className="info">
+                                <p>{selected.info}</p>
+                            </div>
+                            <div className="popUp_add">
+                                <div className="box_price">
+                                    {convertToPersianFormat(selected.price)} <span className="tooman">تومان</span>
                                 </div>
-                                <div className="info">
-                                    <p>{selected.info}</p>
-                                </div>
-                                <div className="popUp_add">
-                                    <div className="box_price">
-                                        {convertToPersianFormat(selected.price)} <span className="tooman">تومان</span>
-                                    </div>
-                                    <div className="box_button2">
-                                        <button onClick={() => addToCart(selected)} className="button2_add">افزودن</button>
-                                    </div>
+                                <div className="box_button2">
+                                    <button onClick={() => addToCart(selected)} className="button2_add">افزودن</button>
                                 </div>
                             </div>
                         </div>
                     </div>
+                </div>
 
 
                 <div className="header_main">
@@ -95,7 +93,7 @@ export const Header = () => {
                             <input placeholder="جست و جو در اسنپ فود" />
                             <IoSearch className="search_button" />
                         </div>
-                        <div className="main_left">
+                        <div className="main_left" onClick={() => clickHandler("history")}>
                             <div className="left_account">
                                 <IoPersonOutline />
                             </div>
