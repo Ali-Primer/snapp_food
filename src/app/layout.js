@@ -6,11 +6,8 @@ import "./globals.css";
 
 import localFont from 'next/font/local'
 import { store } from "./redux/store";
+import { metadata } from "./metadata";
 
-// export const metadata = {
-//   title: "snapp food",
-//   description: "the final project",
-// };
 
 const IranSansMobile = localFont({
   src: '../../public/font/Iranian_Sans.ttf'
@@ -19,6 +16,10 @@ const IranSansMobile = localFont({
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <head>
+        <title>{metadata.title}</title>
+        <meta name="infos" content={metadata.description}/>
+      </head>
       <body className={IranSansMobile.className}>
         <Provider store={store}>
           <Header />

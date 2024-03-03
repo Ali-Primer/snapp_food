@@ -19,12 +19,13 @@ export const isClicked = createSlice({
         },
         isClickedHandlerSearch: (state) => {
             state.darkBackground = true
-            state.search = true
+            state.search = !state.search
         },
         closeHandler: (state) => {
             state.darkBackground = false
             state.foodInfo = false
             state.history = false
+            state.search = false
         }
     }
 })

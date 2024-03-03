@@ -1,5 +1,5 @@
 import classNames from "classnames";
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react"; // Import useRef and useEffect
 import { IoSearch } from "react-icons/io5";
 import { AiOutlineShop } from "react-icons/ai";
 import { IoIosArrowBack } from "react-icons/io";
@@ -8,46 +8,54 @@ import "../search.css";
 import { convertToPersianFormat } from "../utlis/persianNumber";
 import Link from "next/link";
 
-export const Search = () => {
-    const [searchText, setSearchText] = useState("")
-    const [restaurantSuggestions, setRestaurantSuggestions] = useState([])
-    const [foodSuggestions, setFoodSuggestions] = useState([])
+export const Search = ({ clicked }) => {
+    const [searchText, setSearchText] = useState("");
+    const [restaurantSuggestions, setRestaurantSuggestions] = useState([]);
+    const [foodSuggestions, setFoodSuggestions] = useState([]);
+    const inputRef = useRef(null);
+
+    useEffect(() => {
+        if (clicked && inputRef.current) {
+            inputRef.current.focus(); 
+        }
+    }, [clicked]);
 
     const handleSearchText = (event) => {
-        const value = event.target.value.toLowerCase()
+        const value = event.target.value.toLowerCase();
         setSearchText(value);
 
         // restaurant
-        const restaurantSuggest = Restaurant.filter(restaurant =>
+        const restaurantSuggest = Restaurant.filter((restaurant) =>
             restaurant.name.toLowerCase().includes(value)
         );
-        setRestaurantSuggestions(restaurantSuggest)
+        setRestaurantSuggestions(restaurantSuggest);
 
         // food
-        const foodSuggest = Restaurant.filter(restaurant =>
-            restaurant.foods.some(food =>
+        const foodSuggest = Restaurant.filter((restaurant) =>
+            restaurant.foods.some((food) =>
                 food.name.toLowerCase().includes(value)
             )
-        ).map(restaurant => ({
+        ).map((restaurant) => ({
             restaurantName: restaurant.name,
-            foods: restaurant.foods.filter(food =>
+            foods: restaurant.foods.filter((food) =>
                 food.name.toLowerCase().includes(value)
-            ).map(({ name, price, image }) => ({ name, price, image }))
+            ).map(({ name, price, image }) => ({ name, price, image })),
         }));
-        setFoodSuggestions(foodSuggest); // Update foodSuggestions state
-    }
+        setFoodSuggestions(foodSuggest);
+    };
 
     return (
         <>
             <div className="search_main">
                 <input
+                    ref={inputRef} 
                     onChange={handleSearchText}
                     className="search_main_input"
                     placeholder="جست و جو در اسنپ فود"
                     type="text"
                 />
-                <IoSearch className={classNames('opened_searchBarButton', 'search_button')} />
-                <div className="searched">
+                <IoSearch className={classNames("opened_searchBarButton", "search_button")} />
+                <div className="searched_head">
                     {/*restaurant*/}
                     {restaurantSuggestions.length > 0 && searchText.trim() !== "" ? (
                         <>
@@ -56,14 +64,14 @@ export const Search = () => {
                                     <div className="restaurant_header">
                                         <div className="header_text">فروشگاه ها</div>
                                         <div className="header_all">
-                                            مشاهده همه({restaurantSuggestions.length}) <span><IoIosArrowBack /></span>
+                                            تعداد موجود({restaurantSuggestions.length}){" "}
                                         </div>
                                     </div>
                                     <div className="searched_foods">
                                         <ul className="foods_boxList">
                                             {restaurantSuggestions.map((restaurant, index) => (
-                                                <Link href={`/${restaurant.name}`}>
-                                                    <li className="boxList_list" key={index}>
+                                                <Link key={index} href={`/${restaurant.name}`}>
+                                                    <li className="boxList_list">
                                                         <div className="main_icon">
                                                             <AiOutlineShop />
                                                         </div>
@@ -86,51 +94,51 @@ export const Search = () => {
                     {restaurantSuggestions.length > 0 && searchText.trim() !== "" && foodSuggestions.length > 0 ? (
                         <div>
                             <div className="restaurant_header">
-                                <div className="header_text" style={{ color: '#53565c' }}>محصولات</div>
+                                <div className="header_text" style={{ color: "#53565c" }}>
+                                    محصولات
+                                </div>
                                 <div className="header_all">
-                                    مشاهده همه({foodSuggestions.length}) <span><IoIosArrowBack /></span>
+                                    تعداد موجود({foodSuggestions.length}){" "}
                                 </div>
                             </div>
                             <ul>
                                 {foodSuggestions.map((suggestion, index) => (
                                     <>
                                         {suggestion.foods.map((food, foodIndex) => (
-                                            <Link href={`/${suggestion.restaurantName}`}>
-                                            <li className="searched2" key={index}>
-                                                <div key={foodIndex} className="searched_foods">
-                                                    <div className="foods_imgBox">
-                                                        <div className="imgBox_img">
-                                                            <img src={food.image} alt={food.name} />
-                                                        </div>
-                                                    </div>
-                                                    <div className="foods_textBox">
-                                                        <div className="textBox_text">
-                                                            <div className="text_foodName">
-                                                                {food.name}
-                                                            </div>
-                                                            <div className="text_restaurantName">
-                                                                {suggestion.restaurantName}
+                                            <Link key={index} href={`/${suggestion.restaurantName}`}>
+                                                <li key={foodIndex} className="searched2">
+                                                    <div className="searched_foods">
+                                                        <div className="foods_imgBox">
+                                                            <div className="imgBox_img">
+                                                                <img src={food.image} alt={food.name} />
                                                             </div>
                                                         </div>
+                                                        <div className="foods_textBox">
+                                                            <div className="textBox_text">
+                                                                <div className="text_foodName">
+                                                                    {food.name}
+                                                                </div>
+                                                                <div className="text_restaurantName">
+                                                                    {suggestion.restaurantName}
+                                                                </div>
+                                                            </div>
+                                                        </div>
                                                     </div>
-                                                </div>
-                                                <div>
-                                                    <div className="searched_price">
-                                                        {convertToPersianFormat(food.price)} تومان
+                                                    <div>
+                                                        <div className="searched_price">
+                                                            {convertToPersianFormat(food.price)} تومان
+                                                        </div>
                                                     </div>
-                                                </div>
-                                            </li>
+                                                </li>
                                             </Link>
-                                        ))
-                                        }
+                                        ))}
                                     </>
                                 ))}
-
                             </ul>
                         </div>
                     ) : null}
                 </div>
             </div>
         </>
-    )
-}
+    );
+};

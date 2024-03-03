@@ -98,7 +98,7 @@ export const Header = () => {
                             <IoSearch className="search_button" onClick={() => clickHandler("search")} />
                         </div>
                         <div className={clicked.search ? "search" : "search-hidden"}>
-                            <Search />
+                            <Search clicked={clicked.search}/>
                         </div>
 
                         <div className="main_left" onClick={() => clickHandler("history")}>
