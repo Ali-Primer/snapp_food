@@ -37,7 +37,7 @@ export default function Home() {
             </div>
           </div>
           <div className="restaurants_type">
-            <div style={{marginTop: 25}} className="type">
+            <div style={{ marginTop: 25 }} className="type">
               فست فود
             </div>
             <div className="type_list">

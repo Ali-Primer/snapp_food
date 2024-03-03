@@ -13,6 +13,7 @@ import { isClicked } from "../redux/isClicked";
 import { cartSlice } from "../redux/cartSlice";
 import { convertToPersianFormat } from "../utlis/persianNumber";
 import { RxCross1 } from "react-icons/rx";
+import { Search } from "./search";
 
 
 export const Header = () => {
@@ -92,10 +93,14 @@ export const Header = () => {
                                 <IoIosArrowDown className="address_dropDown" />
                             </div>
                         </div>
-                        <div>
-                            <input placeholder="جست و جو در اسنپ فود" onClick={() => clickHandler("search")}/>
+                        <div className="main_search">
+                            <input placeholder="جست و جو در اسنپ فود" onClick={() => clickHandler("search")} />
                             <IoSearch className="search_button" onClick={() => clickHandler("search")} />
                         </div>
+                        <div className={clicked.search ? "search" : "search-hidden"}>
+                            <Search />
+                        </div>
+
                         <div className="main_left" onClick={() => clickHandler("history")}>
                             <div className="left_account">
                                 <IoPersonOutline />

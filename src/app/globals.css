@@ -116,6 +116,43 @@ body {
   font-size: var(--normal-bigger-font);
 }
 
+.search {
+  position: fixed;
+  top: 0px;
+  width: 300px;
+  display: flex;
+  z-index: 20;
+  left: 50%;
+  transform: translate(-50%);
+}
+
+.search-hidden{
+  display: none;
+}
+
+.search_main {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+.search_main_input {
+  display: block;
+  height: 38px;
+  width: 98%;
+  border: 1px solid black;
+  border-radius: 8px;
+  padding: 20px 35px;
+}
+
+.opened_searchBarButton {
+  position: fixed;
+  top: 10px;
+  margin-top: 7px;
+  margin-right: 8px;
+}
+
 .main_left {
   display: flex;
   justify-content: space-evenly;
@@ -623,7 +660,7 @@ li {
   margin: 2% 13%;
 }
 
-.popUp-hidden_box{
+.popUp-hidden_box {
   display: none;
 }
 
@@ -652,7 +689,7 @@ li {
   color: var(--text-black);
 }
 
-.info{
+.info {
   font-size: var(--small-font-plus);
   font-weight: 400;
   color: var(--text-black);
@@ -660,42 +697,43 @@ li {
   line-height: 20px;
 }
 
-.popUp_add{
+.popUp_add {
   display: flex;
   justify-content: space-between;
 }
 
-.box_price{
+.box_price {
   font-size: var(--small-font-plus);
 }
 
-.close_button{
+.close_button {
   margin-bottom: 10px;
   display: flex;
   padding: 5px;
 }
 
-.button_box button{
+.button_box button {
   cursor: pointer;
 }
 
-.close_button button{
+.close_button button {
   border: 0;
   outline: none;
   background: transparent;
   font-size: var(--normal-bigger-font);
 }
 
-@keyframes slideToRight{
-  0%{
+@keyframes slideToRight {
+  0% {
     transform: translateX(-350px);
   }
-  100%{
+
+  100% {
     transform: translateX(0px);
   }
 }
 
-.history-main{
+.history-main {
   height: 200%;
   width: 350px;
   background: white;
@@ -706,13 +744,13 @@ li {
   padding: 10px 5px;
 }
 
-.history{
+.history {
   border: 1px solid var(--gray-color);
 }
 
 @media only screen and (min-width: 765px) {
 
-  .popUp_box{
+  .popUp_box {
     width: 40%;
     margin: 2% 30%;
   }
@@ -812,20 +850,20 @@ li {
 
 @media only screen and (min-width: 1024px) {
 
-  .popUp_box{
+  .popUp_box {
     width: 80%;
     justify-content: space-between;
     margin: 26% 10%;
   }
 
-  .popUp{
+  .popUp {
     display: flex;
     justify-content: space-between;
     flex-direction: row;
     width: 100%;
   }
 
-  .popUp_info{
+  .popUp_info {
     width: 60%;
   }
 
@@ -840,18 +878,18 @@ li {
     font-weight: 700;
   }
 
-  .search_button{
+  .search_button {
     top: 5px;
   }
 
-  .main_right{
+  .main_right {
     width: 20%;
   }
 
   .main_search {
     display: flex;
     position: relative;
-    width: 37%;
+    width: 34%;
   }
 
   .main_search input {
@@ -931,7 +969,7 @@ li {
 
 @media only screen and (min-width: 1440px) {
 
-  .popUp_box{
+  .popUp_box {
     width: 60%;
     margin: 150px 270px;
   }
