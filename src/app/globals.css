@@ -287,7 +287,7 @@ body {
 
 .RestaurantCard {
   width: 377px;
-  height: 260px;
+  height: 350px;
   border-radius: 8px;
   margin-bottom: 40px;
   box-shadow: 0px 10px 22px 0px rgba(0, 0, 0, 0.1);
@@ -330,13 +330,13 @@ body {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  bottom: -20px;
-  box-shadow: 0px 24px 26px 0px rgba(0, 0, 0, 0.1);
+  bottom: -15px;
+  box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1);
 }
 
 .logo {
-  width: 90%;
-  height: 90%;
+  width: 95%;
+  height: 95%;
   border-radius: 16px;
 }
 
@@ -347,7 +347,7 @@ body {
   flex-direction: column;
   margin-top: 20px;
   color: var(--restaurants-color);
-  height: 100px;
+  height: 165px;
 }
 
 .info_restaurantName {
@@ -358,12 +358,48 @@ body {
 .info_restaurantRating {
   font-size: var(--small-font);
   font-weight: 700;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px 0;
+  height: 40px;
+}
+
+.restaurantRating_category{
+  color: var(--gray-color);
+  font-weight: 400;
 }
 
 .restaurantRating_icon {
   color: gold;
   font-size: 11px;
   margin-left: 5px;
+}
+
+.info_distanceAndBikes{
+  border-bottom: 1px solid var(--gray-background);
+  padding: 10px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.distanceAndBikes_price{
+  font-size: var(--small-font);
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1);
+  width: 170px;
+}
+
+.distanceAndBikes_price_icon{
+  font-size: var(--normal-smaller-big-font);
+}
+
+.price{
+  font-weight: 700;
 }
 
 .Contact {

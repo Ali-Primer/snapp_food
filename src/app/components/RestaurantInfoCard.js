@@ -10,6 +10,7 @@ import { MdOutlineSportsMotorsports } from "react-icons/md";
 import { cartSlice } from '../redux/cartSlice';
 import { LuShoppingBag } from "react-icons/lu";
 import { historySlice } from '../redux/historySlice';
+import { deliveryCost } from '../utlis/deliveryCost';
 
 
 
@@ -20,13 +21,6 @@ export const RestaurantInfoCard = ({ restaurant }) => {
     const totalPrice = useMemo(() => cart.reduce((init, cur) => init = init + (cur.count * cur.price), 0), [cart])
     const realPrice = useMemo(() => totalPrice + 5000 + restaurant.deliveryCost, [cart])
 
-    const deliveryCost = (price) => {
-        if (price === 0) {
-            return "رایگان";
-        } else {
-            return price
-        }
-    }
 
     const dispatch = useDispatch()
 

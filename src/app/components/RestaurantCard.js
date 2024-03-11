@@ -1,7 +1,10 @@
 import Link from "next/link";
 import { FaStar } from "react-icons/fa6";
+import { RiEBikeFill } from "react-icons/ri";
+import { convertToPersianFormat } from "../utlis/persianNumber";
+import { deliveryCost } from "../utlis/deliveryCost";
 
-export const RestauransCard = ({restaurant}) => {
+export const RestauransCard = ({ restaurant }) => {
     return (
         <Link href={`/${restaurant.name}`}>
             <div className="RestaurantCard">
@@ -20,6 +23,20 @@ export const RestauransCard = ({restaurant}) => {
                             <FaStar className="restaurantRating_icon" />
                             {restaurant.rating}
                         </p>
+                        <p className="restaurantRating_category">
+                            {restaurant.category}
+                        </p>
+                    </div>
+                    <div className="info_distanceAndBikes">
+                        <div className="distanceAndBikes_price">
+                            <RiEBikeFill className="distanceAndBikes_price_icon" />
+                            <p>
+                                پیک فروشنده
+                            </p>
+                            <p className="price">
+                            {convertToPersianFormat(deliveryCost(restaurant.deliveryCost))}
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>

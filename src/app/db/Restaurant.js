@@ -1,6 +1,7 @@
 export const Restaurant = [
     {
         name: "پیتزا ونک",
+        category: "فست فود",
         foods: [
             {
                 id: 1,
@@ -25,6 +26,7 @@ export const Restaurant = [
     },
     {
         name: "رستوران دیگچه",
+        category: "رستوران ایرانی",
         foods: [
             {
                 id: 3,
@@ -49,6 +51,7 @@ export const Restaurant = [
     },
     {
         name: "اسپاخو",
+        category: "فست فود",
         foods: [
             {
                 id: 5,
@@ -66,6 +69,7 @@ export const Restaurant = [
     },
     {
         name: "رستوران چلو مرغ و گوشت مفخم",
+        category: "رستوران ایرانی",
         foods: [
             {
                 id: 6,
@@ -83,6 +87,7 @@ export const Restaurant = [
     },
     {
         name: "پیتزا کنج",
+        category: "فست فود",
         foods: [
             {
                 id: 7,
