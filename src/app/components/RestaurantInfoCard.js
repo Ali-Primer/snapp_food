@@ -9,7 +9,6 @@ import { LuTrash2 } from "react-icons/lu";
 import { MdOutlineSportsMotorsports } from "react-icons/md";
 import { cartSlice } from '../redux/cartSlice';
 import { LuShoppingBag } from "react-icons/lu";
-import { historySlice } from '../redux/historySlice';
 import { deliveryCost } from '../utlis/deliveryCost';
 
 
