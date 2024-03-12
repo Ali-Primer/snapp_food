@@ -54,7 +54,7 @@ body {
 
 .restaurantInfo_header {
     height: 88px;
-    width: 210px;
+    width: 100%;
 }
 
 .header_info {
@@ -62,7 +62,7 @@ body {
     justify-content: space-between;
     flex-direction: column;
     height: 50%;
-    width: 150px;
+    width: 100%;
 }
 
 .info_rating {
@@ -81,6 +81,7 @@ body {
 .info_name {
     font-size: var(--normal-smaller-big-font);
     font-weight: 700;
+    width: 100%;
 }
 
 .foodList_menu {
@@ -233,6 +234,12 @@ body {
     font-size: var(--small-font-plus);
     color: var(--text-gray);
     font-weight: 700;
+}
+
+.count{
+    font-size: var(--small-font-plus);
+    color: var(--text-black);
+
 }
 
 .delivery-cart_count span {
@@ -511,7 +518,7 @@ body {
     }
 
     .main_restaurantInfo {
-        width: 200px;
+        width: 100%;
     }
 
     .food {

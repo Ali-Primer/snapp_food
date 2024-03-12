@@ -1,9 +1,6 @@
 'use client'
-import { useSelector } from "react-redux"
 import { RestaurantInfoCard } from "../components/RestaurantInfoCard"
 import { Restaurant } from "../db/Restaurant"
-import { useMemo } from "react"
-import { store } from "../redux/store"
 
 const page = ({ params }) => {
     const restaurant = params.restaurant

@@ -19,7 +19,11 @@ export const RestaurantInfoCard = ({ restaurant }) => {
     const { cart } = useSelector((store) => store.cart)
     const cartCount = useMemo(() => cart.reduce((init, cur) => init = init + cur.count, 0), [cart])
     const totalPrice = useMemo(() => cart.reduce((init, cur) => init = init + (cur.count * cur.price), 0), [cart])
-    const realPrice = useMemo(() => totalPrice + 5000 + restaurant.deliveryCost, [cart])
+    const realPrice = useMemo(() => {
+        const deliveryCostValue = restaurant.deliveryCost ? deliveryCost(restaurant.deliveryCost) : 0;
+        return totalPrice + 5000 + deliveryCostValue;
+      }, [cart, restaurant.deliveryCost]);
+    
 
 
     const dispatch = useDispatch()
@@ -41,7 +45,7 @@ export const RestaurantInfoCard = ({ restaurant }) => {
     }
 
     const addToHistory = () => {
-        dispatch(historySlice.actions.addToHistory({foods: cart, totalPrice: realPrice}))
+        dispatch(historySlice.actions.addToHistory({ foods: cart, totalPrice: realPrice }))
         dispatch(cartSlice.actions.deleteAll())
     }
 
@@ -70,7 +74,12 @@ export const RestaurantInfoCard = ({ restaurant }) => {
                     </div>
                     <div className='food_list'>
                         {foods.map(food => (
-                            <Food addToCart={() => addToCart(food)} key={food.id} food={food} />
+                            <Food decrease={() => decrease(food)}
+                                addToCart={() => addToCart(food)}
+                                deleteFood={deleteFood}
+                                key={food.id}
+                                food={food}
+                                cart={cart} />
                         ))}
                     </div>
                 </div>

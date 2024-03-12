@@ -138,9 +138,3 @@ body {
 .searched_price{
     text-align: left;
 }
-
-@media only screen and (min-width: 1440px) {
-    .search{
-        width: 435px;
-    }
-}

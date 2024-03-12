@@ -116,6 +116,14 @@ body {
   font-size: var(--normal-bigger-font);
 }
 
+@keyframes grow{
+  from{
+    width: 0%;
+  }
+  to{
+    width: 100%;
+  }
+}
 .search {
   position: fixed;
   top: 0px;
@@ -126,7 +134,14 @@ body {
   transform: translate(-50%);
 }
 
-.search-hidden{
+.search input{
+  border: 0;
+  outline: none;
+  border: 1px solid black;
+  animation: grow 0.4s;
+}
+
+.search-hidden {
   display: none;
 }
 
@@ -146,11 +161,21 @@ body {
   padding: 20px 35px;
 }
 
+@keyframes opacity{
+  from{
+    opacity: 0%;
+  }
+  to{
+    opacity: 100%;
+  }
+}
+
 .opened_searchBarButton {
   position: fixed;
   top: 10px;
-  margin-top: 7px;
-  margin-right: 8px;
+  right: 10px;
+  color: var(--text-black);
+  animation: opacity 0.5s;
 }
 
 .main_left {
@@ -331,7 +356,7 @@ body {
   justify-content: space-evenly;
   align-items: center;
   bottom: -15px;
-  box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1);
+  box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
 }
 
 .logo {
@@ -366,7 +391,7 @@ body {
   height: 40px;
 }
 
-.restaurantRating_category{
+.restaurantRating_category {
   color: var(--gray-color);
   font-weight: 400;
 }
@@ -377,7 +402,7 @@ body {
   margin-left: 5px;
 }
 
-.info_distanceAndBikes{
+.info_distanceAndBikes {
   border-bottom: 1px solid var(--gray-background);
   padding: 10px 16px;
   display: flex;
@@ -385,20 +410,20 @@ body {
   justify-content: center;
 }
 
-.distanceAndBikes_price{
+.distanceAndBikes_price {
   font-size: var(--small-font);
   display: flex;
   justify-content: space-around;
   flex-direction: row;
-  box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1);
+  box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
   width: 170px;
 }
 
-.distanceAndBikes_price_icon{
+.distanceAndBikes_price_icon {
   font-size: var(--normal-smaller-big-font);
 }
 
-.price{
+.price {
   font-weight: 700;
 }
 
@@ -873,14 +898,18 @@ li {
     grid-template-columns: repeat(4, 1fr);
   }
 
-
-
   .footer_right {
     width: 60%;
   }
 
   .images_left {
     margin-top: 50px;
+  }
+
+  .opened_searchBarButton{
+    right: 10px;
+    top: 10px;
+    color: var(--text-black);
   }
 }
 
@@ -915,7 +944,7 @@ li {
   }
 
   .search_button {
-    top: 5px;
+    top: 10px;
   }
 
   .main_right {
@@ -1001,6 +1030,12 @@ li {
     margin-right: 0;
     padding: 20px;
   }
+
+  .opened_searchBarButton{
+    right: 10px;
+    top: 10px;
+    color: var(--text-black);
+  }
 }
 
 @media only screen and (min-width: 1440px) {
@@ -1028,5 +1063,9 @@ li {
 
   .list {
     grid-template-columns: repeat(12, 1fr);
+  }
+
+  .search {
+    width: 490px;
   }
 }
