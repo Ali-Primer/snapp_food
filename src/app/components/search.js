@@ -1,14 +1,17 @@
 import classNames from "classnames";
-import { useState, useRef, useEffect } from "react"; // Import useRef and useEffect
+import { useState, useRef, useEffect } from "react";
 import { IoSearch } from "react-icons/io5";
 import { AiOutlineShop } from "react-icons/ai";
-import { IoIosArrowBack } from "react-icons/io";
 import { Restaurant } from "../db/Restaurant";
 import "../search.css";
 import { convertToPersianFormat } from "../utlis/persianNumber";
 import Link from "next/link";
+import { useDispatch, useSelector } from "react-redux";
+import { searchHistory } from "../redux/searchHistory";
 
 export const Search = ({ clicked }) => {
+    const dispatch = useDispatch()
+    const searched = useSelector(store => store.searchHistory)
     const [searchText, setSearchText] = useState("");
     const [restaurantSuggestions, setRestaurantSuggestions] = useState([]);
     const [foodSuggestions, setFoodSuggestions] = useState([]);
@@ -19,6 +22,10 @@ export const Search = ({ clicked }) => {
             inputRef.current.focus(); 
         }
     }, [clicked]);
+
+    const setSearchHistory = () => {
+        dispatch(searchHistory.actions.setSearch(searchText))
+    }
 
     const handleSearchText = (event) => {
         const value = event.target.value.toLowerCase();
@@ -70,7 +77,7 @@ export const Search = ({ clicked }) => {
                                     <div className="searched_foods">
                                         <ul className="foods_boxList">
                                             {restaurantSuggestions.map((restaurant, index) => (
-                                                <Link key={index} href={`/${restaurant.name}`}>
+                                                <Link onClick={setSearchHistory} key={index} href={`/${restaurant.name}`}>
                                                     <li className="boxList_list">
                                                         <div className="main_icon">
                                                             <AiOutlineShop />
