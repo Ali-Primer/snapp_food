@@ -6,12 +6,12 @@ import { Restaurant } from "../db/Restaurant";
 import "../search.css";
 import { convertToPersianFormat } from "../utlis/persianNumber";
 import Link from "next/link";
-import { useDispatch, useSelector } from "react-redux";
-import { searchHistory } from "../redux/searchHistory";
+import { SearchedHistory } from "./searchedHistory";
+
+
 
 export const Search = ({ clicked }) => {
-    const dispatch = useDispatch()
-    const searched = useSelector(store => store.searchHistory)
+    const fakeSearchHistory = ["پیتزا", "سیب زمینی", "کباب"]
     const [searchText, setSearchText] = useState("");
     const [restaurantSuggestions, setRestaurantSuggestions] = useState([]);
     const [foodSuggestions, setFoodSuggestions] = useState([]);
@@ -19,13 +19,10 @@ export const Search = ({ clicked }) => {
 
     useEffect(() => {
         if (clicked && inputRef.current) {
-            inputRef.current.focus(); 
+            inputRef.current.focus();
         }
     }, [clicked]);
 
-    const setSearchHistory = () => {
-        dispatch(searchHistory.actions.setSearch(searchText))
-    }
 
     const handleSearchText = (event) => {
         const value = event.target.value.toLowerCase();
@@ -55,7 +52,7 @@ export const Search = ({ clicked }) => {
         <>
             <div className="search_main">
                 <input
-                    ref={inputRef} 
+                    ref={inputRef}
                     onChange={handleSearchText}
                     className="search_main_input"
                     placeholder="جست و جو در اسنپ فود"
@@ -77,7 +74,7 @@ export const Search = ({ clicked }) => {
                                     <div className="searched_foods">
                                         <ul className="foods_boxList">
                                             {restaurantSuggestions.map((restaurant, index) => (
-                                                <Link onClick={setSearchHistory} key={index} href={`/${restaurant.name}`}>
+                                                <Link key={index} href={`/${restaurant.name}`}>
                                                     <li className="boxList_list">
                                                         <div className="main_icon">
                                                             <AiOutlineShop />
@@ -95,7 +92,24 @@ export const Search = ({ clicked }) => {
                                 </div>
                             </div>
                         </>
-                    ) : null}
+                    )
+                        :
+                        <>
+                            <ul>
+                                {fakeSearchHistory.map(item =>
+                                    <li style={{ display: "flex", alignItems: "center", justifyContent: "center", height: "60px", cursor: "pointer" }}>
+                                        <SearchedHistory item={item} />
+                                    </li>
+                                )}
+                            </ul>
+                            <div className="bottomHistory">
+                                <div className="bottomHistory_text">
+                                    عبارت مورد نظر خود را وارد کنید
+                                </div>
+                            </div>
+                        </>
+
+                    }
 
                     {/*food*/}
                     {restaurantSuggestions.length > 0 && searchText.trim() !== "" && foodSuggestions.length > 0 ? (

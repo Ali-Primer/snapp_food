@@ -34,8 +34,8 @@ body {
 .searched_head{
     width: 96%;
     background: white;
-    border-bottom-left-radius: 4px;
-    border-bottom-right-radius: 4px;
+    border-radius: 4px;
+    margin-top: 10px;
 }
 
 
@@ -137,4 +137,48 @@ body {
 
 .searched_price{
     text-align: left;
+}
+
+.searched_history{
+    width: 95%;
+    font-size: var(--normal-font);
+}
+
+.history_box{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-self: center;
+    height: 100%;
+}
+
+.box_right{
+    display: flex;
+}
+
+.box_right p{
+    margin-right: 10px;
+    color: var(--text-gray);
+
+}
+
+.right_icon{
+    font-size: var(--normal-bigger-font);
+}
+
+.left_icon{
+    font-size: var(--normal-font);
+}
+
+.bottomHistory{
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bottomHistory_text{
+    font-size: var(--small-font-plus);
+    width: 95%;
+    color: var(--text-gray);
 }
