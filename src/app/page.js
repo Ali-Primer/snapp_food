@@ -4,6 +4,7 @@ import { CategoryCard } from "./components/CategoryCard";
 import { Cities } from "./components/Cities";
 import { ContactUs } from "./components/ContactUs";
 import { RestauransList } from "./components/RestaurantsList";
+import { FoodParty } from "./components/foodParty";
 import { Seller_SignUp } from "./components/seller_signUp";
 import { Restaurant } from "./db/Restaurant";
 import { cities } from "./db/cities";
@@ -26,6 +27,7 @@ export default function Home() {
               <CategoryCard category={category} />
             ))}
           </div>
+          <FoodParty />
           <div className="restaurants_type">
             <div className="type">
               غذا های ایرانی
