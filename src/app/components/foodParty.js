@@ -67,9 +67,7 @@ export const FoodParty = () => {
             </div>
             <div className="foodParty_left">
                 {foodParty.map(food => 
-                    <div>
                         <FoodInFoodParty food={food}/>
-                    </div>
                 )}
             </div>
         </div>

@@ -7,6 +7,7 @@
     --big-font: 3.2rem;
     --smaller-big-font: 2.6rem;
     --theme-pink-color: #e52e93;
+    --second-pink-color: #ff00a6;
     --info-color: #A6AAAD;
     --borders-color: #ebedf0;
     --text-gray: #53565c;
@@ -16,20 +17,22 @@
     --text-green: #02b863;
 }
 
-.foodParty{
+.foodParty {
     background: var(--theme-pink-color);
     width: 90%;
     margin: 10px auto;
-    height: 428px;
+    /* height: 428px; */
     border-radius: 8px;
     border-bottom-right-radius: 150px;
     display: flex;
     align-items: center;
     padding-right: 80px;
+    flex-direction: column;
+    padding: 30px;
 }
 
-.foodParty_right{
-    width: 15%;
+.foodParty_right {
+    width: 100%;
     height: 95%;
     display: flex;
     justify-content: space-evenly;
@@ -37,7 +40,7 @@
     flex-direction: column;
 }
 
-.right_timer{
+.right_timer {
     display: flex;
     justify-content: space-evenly;
     font-size: var(--normal-smaller-big-font);
@@ -46,20 +49,20 @@
     width: 80%;
 }
 
-.timer_icon{
+.timer_icon {
     font-size: var(--normal-smaller-big-font);
 }
 
-.right_img{
+.right_img {
     width: 80%;
 }
 
-.right_img img{
+.right_img img {
     width: 100%;
     height: 100%;
 }
 
-.right_title{
+.right_title {
     display: flex;
     width: 80%;
     justify-content: center;
@@ -68,16 +71,19 @@
     font-size: var(--smaller-big-font);
 }
 
-.right_text{
+.right_text {
     color: var(--borders-color);
     font-size: var(--small-font);
 }
 
-.right_button{
+.right_button {
     width: 80%;
+    display: flex;
+    justify-content: center;
+    margin: 10px 0;
 }
 
-.right_button button{
+.right_button button {
     background: var(--borders-color);
     color: var(--text-black);
     font-size: var(--normal-font);
@@ -88,13 +94,148 @@
     outline: none;
     border: 0;
     font-weight: 400;
-    padding: 10px 20px;
+    padding: 5px 20px;
 }
 
-.right_button button span{
+.right_button button span {
     font-size: var(--smaller-big-font);
     margin-right: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.foodParty_left {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 20px;
+    margin-right: 20px;
+}
+
+.food {
+    width: 231px;
+    background: white;
+    border-radius: 4px;
+    height: 320px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    padding: 0 15px;
+}
+
+.food_box {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    height: 90%;
+}
+
+.box_restaurant,
+.box_delivery {
+    color: var(--text-black);
+}
+
+.box_img {
+    width: 60%;
+    height: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box_img img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.box_foodName {
+    font-size: var(--normal-font);
+    font-weight: 700;
+    width: 80%;
+    height: 90px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    text-align: center;
+}
+
+.box_info2 {
+    width: 100%;
+    border-bottom: 2px solid var(--info-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 30%;
+    padding-bottom: 20px;
+}
+
+.info2_right,
+.info2_left {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    height: 100%;
+}
+
+.right_rating {
+    font-size: var(--small-font);
+    font-weight: 700;
+
+}
+
+.right_left {
+    font-weight: 700;
+    color: var(--text-black);
+    font-size: var(--small-font-plus);
+}
+
+.right_left_text {
+    font-size: var(--small-font);
+    color: var(--info-color);
+    font-weight: 400;
+}
+
+.left_realPrice {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    direction: ltr;
+}
+
+.realPrice_discount {
+    background: var(--second-pink-color);
+    padding: 3px;
+    color: white;
+    border-radius: 3px;
+    font-size: var(--small-font);
+    font-weight: 700;
+}
+
+.realPrice {
+    text-decoration: line-through;
+    color: var(--info-color);
+    padding-left: 4px;
+}
+
+.final_price {
+    text-align: left;
+    color: black;
+    font-weight: 700;
+    font-size: var(--small-font-plus);
+}
+
+@media only screen and (min-width: 767px) {
+    .foodParty_left {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .foodParty{
+        flex-direction: row;
+    }
+
+    .foodParty_right{
+        width: 40%;
+    }
 }
