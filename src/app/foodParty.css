@@ -42,15 +42,16 @@
 
 .right_timer {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     font-size: var(--normal-smaller-big-font);
     color: var(--borders-color);
     font-weight: 700;
-    width: 80%;
+    width: 100%;
 }
 
 .timer_icon {
     font-size: var(--normal-smaller-big-font);
+    margin-right: 7px;
 }
 
 .right_img {
@@ -116,7 +117,7 @@
     width: 231px;
     background: white;
     border-radius: 4px;
-    height: 320px;
+    height: 400px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -233,6 +234,7 @@
 
     .foodParty{
         flex-direction: row;
+        height: 590px;
     }
 
     .foodParty_right{
